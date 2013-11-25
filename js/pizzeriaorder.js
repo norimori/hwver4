@@ -1,12 +1,10 @@
-//Dynamically add menu items to Dawg Pizza Menu.
+//Interactive shopping cart
+
+
+var subTotalPrice; //subtotal of items in cart
 
 //Document on ready
-
-var subTotalPrice;
-
 $(function() {
-	//auto-play carousel
-    $('.carousel').carousel();
 
 	//Change title tag according to page
 	var titleDisplay = 'Dawg Pizza:';
@@ -45,6 +43,8 @@ $(function() {
 			pizzaButton = $(document.createElement('button'));
 			pizzaButton.attr('type', 'button');
 			pizzaButton.addClass('add-to-cart');
+			pizzaButton.addClass('btn');
+			pizzaButton.addClass('btn-warning');
 
 			pizzaButton.attr('data-type', pizza.type);
 			pizzaButton.attr('data-name', pizza.name); //name of item
@@ -64,7 +64,6 @@ $(function() {
 	//Populate menu with drinks and desserts
 	otherMenus("drinks");
 	otherMenus("desserts");
-
 
 	//Cart object. Stores customer information and all items added to cart.
 	var cart = {
@@ -193,6 +192,8 @@ function renderCart(cart, container) {
         removeButton.attr('data-index', index);
         removeButton.html(' X ');
         removeButton.addClass('remove-from-cart');
+        removeButton.addClass('btn');
+        removeButton.addClass('btn-danger');
 
         $container.append(removeButton);
         $container.append($instance);
@@ -226,14 +227,10 @@ function renderCart(cart, container) {
 
 
 
-
-// postCart()
-// posts the cart model to the server using
-// the supplied HTML form
+// Posts the cart model to the server using the supplied HTML form.
 // parameters are:
-//  - cart (object) reference to the cart model
-//  - cartForm (jQuery object) reference to the HTML form
-//
+//@param cart (object) - reference to the cart model
+//@param cartForm (jQuery object) -reference to the HTML form
 function postCart(cart, cartForm) {
     cartForm.find('input[name="cart"]').val(JSON.stringify(cart));
 
@@ -243,24 +240,8 @@ function postCart(cart, cartForm) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Populate menus according to passed menu type.
-//@param - menuType to populate
+//@param menuType - drink or dessert menu to populate
 function otherMenus(menuType) {
 	var i; //iterator
 	var item; //Current item iteration
@@ -274,6 +255,8 @@ function otherMenus(menuType) {
 	 	itemName.html(item.name);
 	 	itemButton = $(document.createElement('button'));
 		itemButton.addClass('add-to-cart');
+		itemButton.addClass('btn');
+		itemButton.addClass('btn-warning');
 	 	itemButton.attr('type', 'button');
 	 	itemButton.attr('data-type', item.type); //drink or dessert
 	 	itemButton.attr('data-name', item.name); //name of item
@@ -282,5 +265,4 @@ function otherMenus(menuType) {
 	 	$('.' + menuType).append(itemName);
 	 	$('.' + menuType).append(itemButton);
 	}
-};
-
+} //otherMenus()
