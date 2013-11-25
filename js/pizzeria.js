@@ -105,12 +105,12 @@ $(function() {
 	//Submitting orders and checking for requirements. Listens to <button type="submit".
 	//Must have first name, last name, address line 1, zipcode, and phone number.
 	$('.order-form').click(function() {
-		var signupForm = $(this); //wrap raw DOM <form> into JQ object to use JQ methods on it
+		var signupForm = $('.input-form'); //wrap raw DOM <form> into JQ object to use JQ methods on it
 
 
 		var nameInput = signupForm.find('input[name="name"]');
 		var nameValue = nameInput.val();
-		console.log(nameValue);
+		console.log(nameInput);
 		var addr1Input = signupForm.find('input[name="addr-1"]');
 		var addr1Value = addr1Input.val();
 		console.log(addr1Value);
