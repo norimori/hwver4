@@ -102,13 +102,8 @@ $(function() {
 
 	//Submitting orders and checking for requirements. Listens to <button type="submit".
 	//Must have first name, last name, address line 1, zipcode, and phone number.
-	$('.order-form').submit(function() {
+	$('.order-form').click(function() {
 		var signupForm = $(this); //wrap raw DOM <form> into JQ object to use JQ methods on it
-		var hasName = false;
-		var hasAddr1 = false;
-		var hasZipcode = false;
-		var hasPhone = false;
-		var hasPrice = false;
 
 		//(For Safari, IE9) Checks if "required" fields have a value. 
 		var reqField;
@@ -119,7 +114,6 @@ $(function() {
 			alert('Please enter a name.');
 			return false;
 		} else {
-			hasName = true;
 			cart.name = reqValue;
 		}
 
@@ -129,7 +123,6 @@ $(function() {
 			alert('Please enter a delivery destination.');
 			return false;
 		} else {
-			hasAddr1 = true;
 			cart.address1 = reqValue;
 		}
 
@@ -139,7 +132,6 @@ $(function() {
 			alert('Please enter a zip code.');
 			return false;
 		} else {
-			hasZipcode = true;
 			cart.zip = reqValue;
 		}
 
@@ -149,7 +141,6 @@ $(function() {
 			alert('Please enter a phone number.');
 			return false;
 		} else {
-			hasPhone = true;
 			cart.phone = reqValue;
 		}
 
@@ -160,10 +151,7 @@ $(function() {
 			hasPrice = true;
 		}
 
-		if (hasName && hasAddr1 && hasZipcode && hasPhone && hasPrice) {
-            alert($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
-	        //postCart(cart, $('.cart-form'));
-		}
+	    postCart(cart, $('.cart-form'));
 
 	});
 }); //Document on ready
@@ -242,6 +230,8 @@ function renderCart(cart, container) {
 function postCart(cart, cartForm) {
     //find the input in the form that has the name of 'cart'    
     //and set it's value to a JSON representation of the cart model
+    alert($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
+
     $('submit-order').find('input[name="cart"]').val(JSON.stringify(cart));
     //submit the form--this will navigate to an order confirmation page
     cartForm.submit();
