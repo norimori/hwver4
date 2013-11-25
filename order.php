@@ -108,7 +108,7 @@
 	                    </div>
 	                </div>
 	                <div class="row">
-	                    <div class="col-lg-12 text-right">
+	                    <div class="col-lg-12 text-center">
 	                        <button type="button" class="btn btn-success btn-lg order-form">Place Order</button>
 	                    </div>
 	                </div>
