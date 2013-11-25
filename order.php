@@ -52,10 +52,10 @@
 
 			<div class="col-md-6"> <!-- Cart and Customer Display -->
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-xs-8 no-pad-left">
 	                	<h3 class="inline yourStuff">Your Cart</h3>
 	                </div>
-	                <div class="col-xs-6">
+	                <div class="col-xs-4">
 	                	<button type="button" class="btn btn-danger inline clear-cart">Clear Cart</button>
 	                </div>
 	            </div>
