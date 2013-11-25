@@ -92,8 +92,8 @@ $(function() {
 
 	//Remove item from cart
 	//Finds index of item to remove from cart's items array and removes it.
-	$('.yay').click(function(){	
-		console.log("Removing...");
+	$('.remove-from-cart').click(function(){	
+		alert('Removing...');
 
 	    var idxToRemove = this.getAttribute('data-index');
 	    cart.items.splice(idxToRemove, 1);
@@ -129,6 +129,7 @@ function renderCart(cart, container) {
     var $container = $('.cart-display'); //location to put filled item
     var removeButton; //button to click to remove item
     var index = 0;
+    var subTotalPrice = 0;
 
     $container.hide(); //hide before fadeIn
     $container.empty(); //reset contents
@@ -144,13 +145,25 @@ function renderCart(cart, container) {
         removeButton.attr('type', 'button');
         removeButton.attr('data-index', index);
         removeButton.html(' X ');
-        removeButton.addClass('yay');
+        removeButton.addClass('remove-from-cart');
 
         $container.append(removeButton);
         $container.append($instance);
         index++;
+        subTotalPrice = subTotalPrice + this.price;
     })
 
+    subTotal = $(document.createElement('p'));
+    subTotal.html("SubTotal: " subTotalPrice);
+   $container.append(subTotal);
+    tax = $(document.creatElement('p'));
+    tax.html(subTotalPrice * 9.5);
+    $container.append(tax);
+    grandTotal = $(document.createElement('p'));
+    grandTotal.html(subTotal + tax);
+    grandTotal = tax + subTotalPrice;
+    $container.append(grandTotal);
+    
     $container.fadeIn();
     //TODO: code to render sub-total price of the cart
     //the tax amount (see instructions), 
