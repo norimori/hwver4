@@ -69,15 +69,15 @@
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="addr-1">Address:</label>
 	                    <div class="col-lg-10">
-	                        <input type="text" class="form-control" name="addr-1" id="addr-1" placeholder="street address">
-	                        <input type="text" class="form-control" name="addr-2">
-	                        <input type="text" class="form-control" name="zip" placeholder="zip code">
+	                        <input type="text" class="form-control" name="addr-1" id="addr-1" placeholder="street address" required>
+	                        <input type="text" class="form-control" name="addr-2" required>
+	                        <input type="text" class="form-control" name="zip" placeholder="zip code" required>
 	                    </div>
 	                </div>
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="phone">Phone:</label>
 	                    <div class="col-lg-10">
-	                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="primary phone number">
+	                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="primary phone number" required>
 	                    </div>
 	                </div>
 	                <div class="row">
@@ -88,8 +88,8 @@
                </form>
 
                <!-- Submit pizza cart order -->
-               <form class="cart-form" action="http://dawgpizza.com/orders/" method="POST">
-					<input class="submit-order" type="hidden" name="cart">
+               <form class="cart-submit" action="http://dawgpizza.com/orders/" method="POST">
+					<input class="cart-final" type="hidden" name="cart">
 				</form>
 			</div> <!-- Cart and Customer Display -->
 
