@@ -232,10 +232,12 @@ function otherMenus(menuType) {
 	 	item = com.dawgpizza.menu[menuType][i];
 	 	itemName = $(document.createElement('li'));
 	 	itemName.html(item.name);
+	 	itemName.addClass('inline');
 	 	itemButton = $(document.createElement('button'));
 		itemButton.addClass('add-to-cart');
 		itemButton.addClass('btn');
 		itemButton.addClass('btn-warning');
+		itemButton.addClass('inline');
 	 	itemButton.attr('type', 'button');
 	 	itemButton.attr('data-type', item.type); //drink or dessert
 	 	itemButton.attr('data-name', item.name); //name of item
