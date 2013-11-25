@@ -42,6 +42,7 @@
 	</div>
 </main>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="js/pizzeria.js"></script>
 
 <?php include("footer.html"); ?>
