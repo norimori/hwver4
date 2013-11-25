@@ -334,6 +334,13 @@ h4 {
 	font-size: 150%;
 }
 
+.add-to-cart {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	padding-right: 2px;
+	margin-right: 10px;
+}
 
 
 /*Dynamically adjust content display according to screen size*/

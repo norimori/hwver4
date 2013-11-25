@@ -56,7 +56,7 @@ $(function() {
 				pizzaButton.attr('data-size', 'large');
 			}
 			pizzaButton.attr('data-price', pizza.prices[j]);
-			pizzaButton.html(pizza.prices[j]);
+			pizzaButton.html("$" + pizza.prices[j]);
 			place.append(pizzaButton);
 		}
 	}
@@ -240,7 +240,7 @@ function otherMenus(menuType) {
 	 	itemButton.attr('data-type', item.type); //drink or dessert
 	 	itemButton.attr('data-name', item.name); //name of item
 	 	itemButton.attr('data-price', item.price); //price of item
-	 	itemButton.html(item.price);
+	 	itemButton.html("$" + item.price);
 	 	$('.' + menuType).append(itemName);
 	 	$('.' + menuType).append(itemButton);
 	}
