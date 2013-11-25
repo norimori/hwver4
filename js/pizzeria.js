@@ -128,7 +128,6 @@ function renderCart(cart, container) {
     var $template = $('.inCart-template'); 
     var $container = $('.cart-display'); //location to put filled item
     var removeButton; //button to click to remove item
-    var index = 0;
     
     $container.hide(); //hide before fadeIn
     $container.empty(); //reset contents
@@ -141,10 +140,10 @@ function renderCart(cart, container) {
         $instance.removeClass('inCart-template'); //make entry visible
 
         removeButton = $(document.createElement('button'));
-        removeButton.addClass('yay');
         removeButton.attr('type', 'button');
         removeButton.attr('data-index', index);
         removeButton.html(' X ');
+        removeButton.addClass('yay');
 
         $container.append(removeButton);
         $container.append($instance);
