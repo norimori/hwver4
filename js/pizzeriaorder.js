@@ -187,7 +187,7 @@ function renderCart(cart, container) {
         removeButton.addClass('btn-danger');
         removeButton.addClass('inline');
 		removeButton.addClass('.col-xs-1');
-
+		removeButton.addClass('.btn-xs');
 
 
         $container.append(removeButton);
