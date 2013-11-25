@@ -2,8 +2,7 @@
 
 //Document on ready
 
-var subTotalPrice = 0;
-
+var subTotalPrice;
 
 $(function() {
 	//auto-play carousel
@@ -106,7 +105,7 @@ $(function() {
 	//Must have first name, last name, address line 1, zipcode, and phone number.
 	$('.order-form').click(function() {
 		var signupForm = $('.input-form'); //wrap raw DOM <form> into JQ object to use JQ methods on it
-
+		
 		var reqField;
 		var reqValue;
 		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
@@ -157,7 +156,7 @@ $(function() {
 			/*$('.cart-final').val(JSON.stringify(cart));
 			$('.cart-submit').submit();*/
 		} else {
-			alert('Online orders must have a subtotal of at least $20.00.');
+			alert('Online orders must have a minimum subtotal of $20.00.');
 			return false;
 		}
 	});
@@ -175,6 +174,8 @@ function renderCart(cart, container) {
     var $container = $('.cart-display'); //location to put filled item
     var removeButton; //button to click to remove item
     var index = 0;
+    subTotalPrice = 0;
+    var grandTotalPrice = 0;
 
     $container.hide(); //hide before fadeIn
     $container.empty(); //reset contents
