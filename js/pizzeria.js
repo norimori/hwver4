@@ -151,7 +151,7 @@ $(function() {
 			return false;
 		}
 
-		if(grandTotalPrice < 20 {
+		if(grandTotalPrice < 20) {
 			alert("Online orders must be at least $20.00");
 			return false;
 		}
