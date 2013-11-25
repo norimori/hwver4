@@ -2,7 +2,8 @@
 
 //Document on ready
 
-var grandTotalPrice = 0;
+var subTotalPrice = 0;
+
 
 $(function() {
 	//auto-play carousel
@@ -151,12 +152,12 @@ $(function() {
 			cart.zip = reqValue;
 		}
 
-		if (grandTotalPrice > 20.00) {
+		if (subTotalPrice > 20.00) {
 			postCart(cart, $('.cart-submit'))
 			/*$('.cart-final').val(JSON.stringify(cart));
 			$('.cart-submit').submit();*/
 		} else {
-			alert('Online orders must be a minimum of $20.00.');
+			alert('Online orders must have a subtotal of at least $20.00.');
 			return false;
 		}
 	});
@@ -174,7 +175,6 @@ function renderCart(cart, container) {
     var $container = $('.cart-display'); //location to put filled item
     var removeButton; //button to click to remove item
     var index = 0;
-    var subTotalPrice = 0;
 
     $container.hide(); //hide before fadeIn
     $container.empty(); //reset contents
