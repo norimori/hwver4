@@ -29,7 +29,7 @@
 					<!--Meat Pizzas populate here-->
 				</dl>
 
-				<h3 class="highlights">Vegetarian Pizzas</h3>
+				<h3 class="highlights veg-pizza">Vegetarian Pizzas</h3>
 				<dl class="vegetarian">
 					<!--Vegetarian pizzas populate here-->
 				</dl>
