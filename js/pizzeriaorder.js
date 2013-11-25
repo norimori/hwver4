@@ -151,15 +151,31 @@ $(function() {
 			return false;
 		}
 	});
+
+
+
+	$(".delivery").on('change', function(){
+    	localStorage.setItem('address1', cart.address1.toJSON());
+    	console.log('saving to local storage');
+	});
+
+	var add1JSON = localStorage.getItem('address1');
+	var insertAdd1;
+	if (add1JSON && add1JSON.length > 0) {
+		insertAdd1 = $('.input-form').find('input[name="addr-1"]')
+    	insertAdd1.html(JSON.parse(add1JSON));
+    	console.log('retrieved!');
+	}
+
+
 }); //Document on ready
 
 
 
-// renderCart()
-// renders the current cart information to the screen
+//Renders the current cart information to the screen
 // parameters are:
-//  - cart (object) reference to the cart model
-//  - container (jQuery object) reference to the container <div>
+//@param cart (object) - reference to the cart model
+//@param container (jQuery object) - reference to the container <div>
 function renderCart(cart, container) {
     var $template = $('.inCart-template'); 
     var $container = $('.cart-display'); //location to put filled item
