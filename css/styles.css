@@ -301,6 +301,15 @@ h4 {
 	font-weight: bold;
 }
 
+.subTotal-price, .tax-price, .grandTotal-price {
+	color: #d2b4f6;
+}
+
+.grandTotal-price {
+	font-weight: bold;
+	font-size: 150%;
+}
+
 /*Dynamically adjust content display according to screen size*/
 @media screen and (max-width: 820px) {
 	#pizzavid {

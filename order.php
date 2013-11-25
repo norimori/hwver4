@@ -56,6 +56,28 @@
                 <h3>Your Cart</h3>
                 <button type="button" class="btn clear-cart">Clear Cart</button>
                 <div class="cart-display"></div>
+                <div class="cost-display">
+                	<div class="row">
+                		<div class="col-xs-8"> SubTotal: </div>
+                		<div class="col-xs-4">
+							$<span class="subTotal-price"></span>
+						</div>
+                	</div>
+
+                	<div class="row">
+                		<div class="col-xs-8"> SubTotal: </div>
+                		<div class="col-xs-4">
+							$<span class="tax-price"></span>
+						</div>
+                	</div>
+
+                	<div class="row">
+                		<div class="col-xs-8"> SubTotal: </div>
+                		<div class="col-xs-4">
+							$<span class="grandTotal-price"></span>
+						</div>
+                	</div>                	                	
+                </div>
                
 
                 <h3>Delivery Info</h3>

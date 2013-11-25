@@ -75,7 +75,6 @@ $(function() {
 	    items: [] //stores all items
 	}; //Cart object
 
-
 	//Adding item to cart
 	//Constructs new single-in-cart item object, to be added to cart object.
 	$('.add-to-cart').click(function(){
@@ -85,20 +84,15 @@ $(function() {
 	        size: this.getAttribute('data-size'),
 	        price: this.getAttribute('data-price'),
 	    };
-
         cart.items.push(newCartItem); //add item to cart
-        console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size + "(" + newCartItem.price + ")");
-
         renderCart(cart, $('.cart-display'));
 	});
-
 
     //Clear cart contents
     $('.clear-cart').click(function(){
     	cart.items = [];
     	renderCart(cart, $('.cart-display'));
     });
-
 
 	//Submitting orders and checking for requirements. Listens to <button type="submit".
 	//Must have first name, last name, address line 1, zipcode, and phone number.
@@ -107,17 +101,17 @@ $(function() {
 		
 		var reqField;
 		var reqValue;
-		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
+		reqField = signupForm.find('input[name="name"]'); //Grab <input name="name">
 		reqValue = reqField.val().trim(); //Grab its innerHTML
 		if(0 === reqValue.length) {
-			alert('Please enter a first name.');
+			alert('Please enter a name.');
 			return false;
 		} else {
 			cart.name = reqValue;
 		}
 
-		reqField = signupForm.find('input[name="addr-1"]'); //Grab <input name="first-name">
-		reqValue = reqField.val().trim(); //Grab its innerHTML
+		reqField = signupForm.find('input[name="addr-1"]');
+		reqValue = reqField.val().trim(); 
 		if(0 === reqValue.length) {
 			alert('Please enter a delivery an address.');
 			return false;
@@ -125,15 +119,15 @@ $(function() {
 			cart.address1 = reqValue;
 		}
 
-		//Address line 2 is not required
-		reqField = signupForm.find('input[name="addr-2"]'); //Grab <input name="first-name">
-		reqValue = reqField.val().trim(); //Grab its innerHTML
+		//Address line 2 is optional
+		reqField = signupForm.find('input[name="addr-2"]'); 
+		reqValue = reqField.val().trim();
 		if(0 < reqValue.length) {
 			cart.address2 = reqValue;
 		}
 
-		reqField = signupForm.find('input[name="phone"]'); //Grab <input name="first-name">
-		reqValue = reqField.val().trim(); //Grab its innerHTML
+		reqField = signupForm.find('input[name="phone"]');
+		reqValue = reqField.val().trim(); 
 		if(0 === reqValue.length) {
 			alert('Please enter a delivery an phone number.');
 			return false;
@@ -141,8 +135,8 @@ $(function() {
 			cart.phone = reqValue;
 		}
 
-		reqField = signupForm.find('input[name="zip"]'); //Grab <input name="first-name">
-		reqValue = reqField.val().trim(); //Grab its innerHTML
+		reqField = signupForm.find('input[name="zip"]'); 
+		reqValue = reqField.val().trim();
 		if(0 === reqValue.length) {
 			alert('Please enter a delivery an zip code.');
 			return false;
@@ -152,8 +146,6 @@ $(function() {
 
 		if (subTotalPrice > 20.00) {
 			postCart(cart, $('.cart-submit'))
-			/*$('.cart-final').val(JSON.stringify(cart));
-			$('.cart-submit').submit();*/
 		} else {
 			alert('Online orders must have a minimum subtotal of $20.00.');
 			return false;
@@ -202,16 +194,10 @@ function renderCart(cart, container) {
     })
 
     //Calculate subtotal, tax, and grand total
-    subTotal = $(document.createElement('p'));
-    subTotal.html("SubTotal: " + Number(subTotalPrice).toFixed(2));
-   $container.append(subTotal);
-    var tax = $(document.createElement('p'));
-    tax.html("Tax: " + Number(subTotalPrice * 0.095).toFixed(2));
-    $container.append(tax);
-    grandTotal = $(document.createElement('p'));
+    $(".subTotal-price").html(Number(subTotalPrice).toFixed(2));
+    $('.tax-price').html(Number(subTotalPrice * 0.095).toFixed(2));
     grandTotalPrice = (Number(subTotalPrice) + Number(subTotalPrice * 0.095)).toFixed(2);
-    grandTotal.html("Total: " + grandTotalPrice);
-    $container.append(grandTotal);
+    $('.grandTotal-price').html(grandTotalPrice);
     
 
     //Remove item from cart
