@@ -151,7 +151,7 @@ function renderCart(cart, container) {
     tax.html("Tax: " + Number(subTotalPrice * 0.095).toFixed(2));
     $container.append(tax);
     grandTotal = $(document.createElement('p'));
-    grandTotal.html("Total: " + Number(subTotalPrice + subTotalPrice * 0.095).toFixed(2));
+    grandTotal.html("Total: " + (Number(subTotalPrice) + Number(subTotalPrice * 0.095)).toFixed(2));
     $container.append(grandTotal);
     
 
