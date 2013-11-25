@@ -165,7 +165,7 @@ $(function() {
 	if (prevAdd1 && prevAdd1.length > 0) {
 		insertAdd1 = $('.input-form').find('input[name="addr-1"]')
     	insertAdd1.html(prevAdd1);
-    	console.log('retrieved!' + insertAdd1);
+    	console.log('retrieved!' + prevAdd1);
 	}
 
 
