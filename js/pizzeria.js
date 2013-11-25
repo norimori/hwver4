@@ -136,7 +136,7 @@ $(function() {
 		reqField = signupForm.find('input[name="zip"]');
 		reqValue = reqField.val().trim();
 		if (0 === reqValue.length) {
-			alert('Please enter a delivery destination.');
+			alert('Please enter a zip code.');
 			return false;
 		} else {
 			hasZipcode = true;
@@ -161,7 +161,8 @@ $(function() {
 		}
 
 		if (hasName && hasAddr1 && hasZipcode && hasPhone && hasPrice) {
-	        postCart(cart, $('.cart-form'));
+            console.log($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
+	        //postCart(cart, $('.cart-form'));
 		}
 
 	}); //Submit form submit
@@ -242,11 +243,8 @@ function postCart(cart, cartForm) {
     //find the input in the form that has the name of 'cart'    
     //and set it's value to a JSON representation of the cart model
     $('submit-order').find('input[name="cart"]').val(JSON.stringify(cart));
-
-    console.log($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
     //submit the form--this will navigate to an order confirmation page
     cartForm.submit();
-
 } //postCart()
 
 
