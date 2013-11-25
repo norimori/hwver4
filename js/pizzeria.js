@@ -84,7 +84,7 @@ $(function() {
 	    };
 
         cart.items.push(newCartItem); //add item to cart
-        console.log("you just added" . newCartItem.name);
+        console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size);
 
         //render the cart's contents to the element
         //we're using to contain the cart information
