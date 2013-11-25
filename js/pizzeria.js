@@ -180,7 +180,7 @@ function otherMenus(menuType) {
 	var itemName;
 	var itemPrice;
 	var place; //Location to append item
-	var itemButton //Button to click to add item to cart
+	var itemButton; //Button to click to add item to cart
 	for (i = 0; i < com.dawgpizza.menu[menuType].length; i++) {
 	 	item = com.dawgpizza.menu[menuType][i];
 	 	itemName = $(document.createElement('li'));
