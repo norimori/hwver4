@@ -51,8 +51,14 @@
 
 
 			<div class="col-md-6"> <!-- Cart and Customer Display -->
-                <h3 class="inline yourStuff">Your Cart</h3>
-                <button type="button" class="btn btn-danger inline clear-cart">Clear Cart</button>
+				<div class="row">
+					<div class="col-xs-6">
+	                	<h3 class="inline yourStuff">Your Cart</h3>
+	                </div>
+	                <div class="col-xs-6"
+	                	<button type="button" class="btn btn-danger inline clear-cart">Clear Cart</button>
+	                </div>
+	            </div>
                 <div class="cart-display"></div>
                 <div class="cost-display">
                 	<div class="row">
@@ -116,8 +122,8 @@
 
 			<div class="inCart-template"><!-- Cart item template. Hidden until items added -->
             	<div class="row">
-            		<div class="col-xs-8 inCart-name inline"></div>
-            		<div class="col-xs-4">
+            		<div class="col-xs-7 inCart-name inline"></div>
+            		<div class="col-xs-3">
 						$<span class="inCart-price"></span>
 					</div>
             	</div>				
