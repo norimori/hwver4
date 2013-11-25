@@ -58,8 +58,8 @@
 			</div> <!-- Cart Display -->
 
 			<div class="inCart-template">
-				<p class="inCart-name"></p>
-				<p class="inCart-price inline">$<p>
+				<p class="inCart-name inline"></p>
+				<p class="inCart-price">$<p>
 			</div>
 		</div>
 
