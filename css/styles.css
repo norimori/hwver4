@@ -305,8 +305,12 @@ h4 {
 	font-weight: bold;
 }
 
-.yourCart, .subTotal-price, .tax-price, .grandTotal-price, .inCart-price {
+.yourStuff, .subTotal-price, .tax-price, .grandTotal-price, .inCart-price {
 	color: #d2b4f6;
+}
+
+.yourStuff {
+	margin-bottom: 10px;
 }
 
 .no-pad-left {
