@@ -168,7 +168,7 @@ $(function() {
 
 	var currAdd2;
 	$("#addr-2").on('change', function(){
-		currAdd1 = $("#addr-2").val();
+		currAdd2 = $("#addr-2").val();
     	localStorage.setItem('address2', currAdd2);
 	});
 	var prevAdd2 = localStorage.getItem('address2');
