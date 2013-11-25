@@ -72,6 +72,7 @@ $(function() {
 	    items: [] //stores all items
 	}; //Cart object
 
+	var itemIndex; //Total index number
 
 	//Adding item to cart
 	//Constructs new single-in-cart item object, to be added to cart object.
@@ -80,8 +81,11 @@ $(function() {
 	        type: this.getAttribute('data-type'),
 	        name: this.getAttribute('data-name'),
 	        size: this.getAttribute('data-size'),
-	        price: this.getAttribute('data-price')
+	        price: this.getAttribute('data-price'),
+	        index: itemIndex++;
 	    };
+
+	    this.attr('data-index', itemIndex);
 
         cart.items.push(newCartItem); //add item to cart
         console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size + "(" + newCartItem.price + ")");
@@ -92,6 +96,12 @@ $(function() {
         //other grouping element on the page that has a
         //style class of 'cart-container'
         renderCart(cart, $('.cart-display'));
+	});
+
+
+	$('.remove-from-cart').click(function(){	
+	    var idxToRemove = this.getAttribute('data-index');
+	    cart.items.splice(idxToRemove, 1);
 	});
 
 
