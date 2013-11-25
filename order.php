@@ -5,16 +5,16 @@
 		<h2>- Order Online -</h2>
 		<div class="menu-cat">
 			<p>
-				We deliver only within the Seattle city limits.
+				We deliver only within the <span class='bold'>Seattle</span> city limits.
 			</p>
 			<p>
-				Delivery times: Noon - 11:00PM
+				Delivery times: <span class="bold">Noon - 11:00PM</span>
 			</p>
 			<p>
-				Delivery is free! But orders must be a minimum of $20.
+				Delivery is free! But orders must be a <span class="bold">minimum of $20</span>.
 			</p>
 			<p>
-				We accept cash or credit cards on delivery.
+				We accept <span class="bold">cash or credit cards</span> on delivery.
 			</p>
 			<p>
 				We don't deliver our custom pizzas, so if you want to try one out, come eat in!	

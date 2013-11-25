@@ -70,8 +70,10 @@ $(function() {
 	var cart = {
 	    name: null,
 	    address1: null,
+	    address2: null,
 	    zip: null,
 	    phone: null,
+	    nextUrl: "www.google.com",
 	    items: [] //stores all items
 	}; //Cart object
 
@@ -108,50 +110,61 @@ $(function() {
 		//(For Safari, IE9) Checks if "required" fields have a value. 
 		var reqField;
 		var reqValue;
+
 		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
-		reqValue = reqField.val().trim(); //Grab its innerHTML
-		if(0 === reqValue.length) {
+		if (reqField.val() && reqValue.length > 0) { //If there is any input value
+			reqValue = reqField.val().trim(); //Grab its innerHTML
+			cart.name = reqValue;
+			console.log(cart.name);
+		} else {
 			alert('Please enter a name.');
 			return false;
-		} else {
-			cart.name = reqValue;
 		}
 
 		reqField = signupForm.find('input[name="addr-1"]');
-		reqValue = reqField.val().trim();
-		if (0 === reqValue.length) {
-			alert('Please enter a delivery destination.');
-			return false;
-		} else {
+		if (reqField.val() && reqValue.length > 0) { //If there is any input value
+			reqValue = reqField.val().trim(); //Grab its innerHTML
 			cart.address1 = reqValue;
+			console.log(cart.address1);
+		} else {
+			alert('Please enter an address.');
+			return false;
+		}
+
+		reqField = signupForm.find('input[name="addr-2"]');
+		if (reqField.val() && reqValue.length > 0) { //If there is any input value
+			reqValue = reqField.val().trim(); //Grab its innerHTML
+			cart.address2 = reqValue;
+			console.log(cart.address2);
 		}
 
 		reqField = signupForm.find('input[name="zip"]');
-		reqValue = reqField.val().trim();
-		if (0 === reqValue.length) {
+		if (reqField.val() && reqValue.length > 0) { //If there is any input value
+			reqValue = reqField.val().trim(); //Grab its innerHTML
+			cart.zip = reqValue;
+			console.log(cart.zip);
+		} else {
 			alert('Please enter a zip code.');
 			return false;
-		} else {
-			cart.zip = reqValue;
 		}
 
+
 		reqField = signupForm.find('input[name="phone"]');
-		reqValue = reqField.val().trim();
-		if(0 === reqValue.length) {
+		if (reqField.val() && reqValue.length > 0) { //If there is any input value
+			reqValue = reqField.val().trim(); //Grab its innerHTML
+			cart.phone = reqValue;
+			console.log(cart.phone);
+		} else {
 			alert('Please enter a phone number.');
 			return false;
-		} else {
-			cart.phone = reqValue;
 		}
 
 		if(grandTotalPrice < 20) {
 			alert("Online orders must be at least $20.00");
 			return false;
-		} else {
-			hasPrice = true;
 		}
 
-	    postCart(cart, $('.cart-form'));
+	    /*postCart(cart, $('.cart-form'));*/
 
 	});
 }); //Document on ready
