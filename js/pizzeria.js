@@ -76,15 +76,12 @@ $(function() {
 	//Adding item to cart
 	//Constructs new single-in-cart item object, to be added to cart object.
 	$('.add-to-cart').click(function(){
-		itemIndex++;
 	    var newCartItem = {
 	        type: this.getAttribute('data-type'),
 	        name: this.getAttribute('data-name'),
 	        size: this.getAttribute('data-size'),
 	        price: this.getAttribute('data-price'),
 	    };
-
-	    $(this).attr('data-index', itemIndex);
 
         cart.items.push(newCartItem); //add item to cart
         console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size + "(" + newCartItem.price + ")");
