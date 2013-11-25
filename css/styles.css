@@ -89,15 +89,20 @@ nav ul {
 	padding-bottom: 1px;
 }
 
-#nav-top {
+#nav-one {
 	margin-top: 10px;
 }
 
-#nav-middle {
+#nav-two {
 	margin: 10px;
 }
 
-#nav-bottom {
+#nav-three{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#nav-four {
 	margin-bottom: 10px;
 }
 
