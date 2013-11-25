@@ -112,7 +112,7 @@ $(function() {
 		var nameValue = nameInput.val();
 		var addr1Input = signupForm.find('input[name="addr-1"]');
 		var addr1Value = addr1Input.val();
-		var addr2Input = signupForm.find('input[name="addr-2"');
+		var addr2Input = signupForm.find('input[name="addr-2"]');
 		var addr2Value = addr2Input.val();
 		var phoneInput = signupForm.find('input[name="phone"]');
 		var phoneValue = phoneInput.val();
