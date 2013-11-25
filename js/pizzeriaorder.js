@@ -156,7 +156,7 @@ $(function() {
 	var currAdd1;
 	$("#addr-1").on('change', function(){
 		currAdd1 = $("#addr-1").val();
-    	localStorage.setItem('address1', currAdd1;
+    	localStorage.setItem('address1', currAdd1);
     	console.log('saving to local storage');
 	});
 
