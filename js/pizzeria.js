@@ -241,7 +241,7 @@ function renderCart(cart, container) {
 function postCart(cart, cartForm) {
     //find the input in the form that has the name of 'cart'    
     //and set it's value to a JSON representation of the cart model
-    cartForm.find('input[name="cart"]').val(JSON.stringify(cart));
+    $('submit-order').find('input[name="cart"]').val(JSON.stringify(cart));
 
     //submit the form--this will navigate to an order confirmation page
     cartForm.submit();
