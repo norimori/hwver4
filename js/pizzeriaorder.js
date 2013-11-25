@@ -181,7 +181,7 @@ function renderCart(cart, container) {
         removeButton = $(document.createElement('button'));
         removeButton.attr('type', 'button');
         removeButton.attr('data-index', index);
-        removeButton.html(' X ');
+        removeButton.html('X');
         removeButton.addClass('remove-from-cart');
         removeButton.addClass('btn');
         removeButton.addClass('btn-danger');
