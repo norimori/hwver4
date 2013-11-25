@@ -55,7 +55,7 @@
 					<div class="col-xs-6">
 	                	<h3 class="inline yourStuff">Your Cart</h3>
 	                </div>
-	                <div class="col-xs-6"
+	                <div class="col-xs-6">
 	                	<button type="button" class="btn btn-danger inline clear-cart">Clear Cart</button>
 	                </div>
 	            </div>

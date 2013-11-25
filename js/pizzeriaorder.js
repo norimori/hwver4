@@ -176,7 +176,6 @@ function renderCart(cart, container) {
         $instance = $template.clone(); //creates template to fill
         $instance.find('.inCart-name').html(this.name); //this = element in array currently iterating over
         $instance.find('.inCart-price').html("$" + this.price);
-        $instance.addClass('.col-xs-1');
         $instance.removeClass('inCart-template'); //make entry visible
 
         removeButton = $(document.createElement('button'));
@@ -187,6 +186,8 @@ function renderCart(cart, container) {
         removeButton.addClass('btn');
         removeButton.addClass('btn-danger');
         removeButton.addClass('inline');
+		removeButton.addClass('.col-xs-1');
+
 
 
         $container.append(removeButton);
