@@ -181,7 +181,7 @@ $(function() {
 	var currZip;
 	$("#zip").on('change', function(){
 		currZip = $("#zip").val();
-    	localStorage.setItem('zip', zip);
+    	localStorage.setItem('zip', currZip);
 	});
 	var prevZip = localStorage.getItem('zip');
 	var insertZip;
