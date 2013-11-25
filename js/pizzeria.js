@@ -126,11 +126,12 @@ function renderCart(cart, container) {
     $.each(cart.items, function() {
         $instance = $template.clone(); //creates template to fill
         $instance.find('.inCart-name').html(this.name); //this = element in array currently iterating over
-        $instance.find('.in-Cart-price').html(this.price);
+        $instance.find('.inCart-price').html(this.price);
 
         $instance.removeClass('inCart-template'); //make entry visible
         $container.append($instance);
     })
+
     $container.fadeIn();
     //TODO: code to render sub-total price of the cart
     //the tax amount (see instructions), 
