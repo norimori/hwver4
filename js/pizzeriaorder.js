@@ -153,9 +153,10 @@ $(function() {
 	});
 
 
-
+	var currAdd1;
 	$("#addr-1").on('change', function(){
-    	localStorage.setItem('address1', $("#addr-1").val().toJSON());
+		currAdd1 = $("#addr-1").val();
+    	localStorage.setItem('address1', currAdd1.toJSON());
     	console.log('saving to local storage');
 	});
 
