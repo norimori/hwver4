@@ -36,24 +36,24 @@ $(function() {
 		place.append(pizzaDescription);
 
 		//Make buttons according to available pizza size options
-		var orderSize;
+		var pizzaButton;
 		var j; //iterator
 		for (j = 0; j < pizza.prices.length; j++) {
-			orderSize = $(document.createElement('button'));
-			orderSize.addClass('add-to-cart');
+			pizzaButton = $(document.createElement('button'));
+			pizzaButton.addClass('add-to-cart');
 
-			orderSize.attr('data-type', pizza.type); //pizza, drink, or desert
-			orderSize.attr('data-name', pizza.name); //name of item
+			pizzaButton.attr('data-type', pizza.type);
+			pizzaButton.attr('data-name', pizza.name); //name of item
 			if (j == 0) {
-				orderSize.attr('data-size', 'small'); 
+				pizzaButton.attr('data-size', 'small'); 
 			} else if (j == 1) {
-				orderSize.attr('data-size', 'medium');
+				pizzaButton.attr('data-size', 'medium');
 			} else {
-				orderSize.attr('data-size', 'large');
+				pizzaButton.attr('data-size', 'large');
 			}
-			orderSize.attr('data-price', pizza.prices[j]);
-			orderSize.html(pizza.prices[j]);
-			place.append(orderSize);
+			pizzaButton.attr('data-price', pizza.prices[j]);
+			pizzaButton.html(pizza.prices[j]);
+			place.append(pizzaButton);
 		}
 	}
 
@@ -70,11 +70,17 @@ function otherMenus(menuType) {
 	var itemName;
 	var itemPrice;
 	var place; //Location to append item
+	var itemButton //Button to click to add item to cart
 	for (i = 0; i < com.dawgpizza.menu[menuType].length; i++) {
 	 	item = com.dawgpizza.menu[menuType][i];
 	 	itemName = $(document.createElement('li'));
 	 	itemName.html(item.name);
-	 	$('.' + menuType).append(itemName.append($('<span/>', {text: ' $' + item.price})));
-	 	$('.' + menuType + ' span').addClass('cost');
+	 	itemButton = $(document.createElement('button'));
+	 	itemButton.attr('data-type', com.dawgpizza.menu[menuType].type); //drink or dessert
+	 	itemButton.attr('data-name', com.dawgpizza.menu[menuType].name); //name of item
+	 	itemButton.attr('data-price', com.dawgpizza.menu[menuType].price); //price of item
+	 	itemButton.html(com.dawgpizza.menu[menuType].price);
+	 	$('.' + menuType).append(itemName);
+	 	$('.' + menuType).append(itemButton);
 	}
 };

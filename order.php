@@ -42,7 +42,7 @@
 				</ul>
 
 				<hr>
-				
+
 				<h3 class="highlights">Dessert</h3>
 				<ul class="desserts">
 					<!--Desert items populate here-->
@@ -60,21 +60,5 @@
 
 	</div>
 </main>
-
-<script src="lib/jquery-2.0.3/jquery-2.0.3.min.js"></script>
-
-<!-- Online ordering script -->
-<script src="js/utils.js"></script>
-<script src="js/events.js"></script>
-<script src="js/models.js"></script>
-<script src="js/views.js"></script>
-<script src="js/movies.js"></script>
-<script src="js/movieView.js"></script>
-<script src="js/moviesView.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/cartItemView.js"></script>
-<script src="js/cartView.js"></script>
-<script src="js/controller.js"></script>
-
 
 <?php include("footer.html"); ?>
