@@ -40,7 +40,7 @@ $(function() {
 		var j; //iterator
 		for (j = 0; j < pizza.prices.length; j++) {
 			pizzaButton = $(document.createElement('button'));
-			itemButton.attr('type', 'button');
+			pizzaButton.attr('type', 'button');
 			pizzaButton.addClass('add-to-cart');
 
 			pizzaButton.attr('data-type', pizza.type);
