@@ -49,10 +49,18 @@
 				</ul>
 			</div> <!-- Menu Display -->
 
+
+
+
 			<div class="col-md-6"> <!-- Cart Display -->
                 <h3>Your Cart</h3>
                 <div class="cart-display"></div>
 			</div> <!-- Cart Display -->
+
+			<div class="inCart-template">
+				<p class="inCart-name"></p>
+				<p class="inCart-price inline"><p>
+			</div>
 		</div>
 
 

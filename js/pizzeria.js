@@ -84,7 +84,7 @@ $(function() {
 	    };
 
         cart.items.push(newCartItem); //add item to cart
-        console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size);
+        console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size + "(" + newCartItem.price) + ")";
 
         //render the cart's contents to the element
         //we're using to contain the cart information
@@ -116,26 +116,30 @@ $(function() {
 // parameters are:
 //  - cart (object) reference to the cart model
 //  - container (jQuery object) reference to the container <div>
-//
 function renderCart(cart, container) {
-    var idx, item;
+    var $template = $('.inCart-template'); 
+    var $cart = $('.cart-display'); //location to put filled item
     
-    //empty the container of whatever is there currently
-    container.empty();
+    $container.hide(); //hide before fadeIn
+    $container.empty(); //reset contents
+    
+    $.each(cart.items, function() {
+        $instance = $template.clone(); //creates template to fill
+        $instance.find('.inCart-name').html(this.name); //this = element in array currently iterating over
+        $instance.find('.in-Cart-price').html(this.price);
 
-    //for each item in the cart...
-    for (idx = 0; idx < cart.items.length; ++idx) {
-        item = cart.items[idx];
-
-        //TODO: code to render the cart item
-
-    } //for each cart item
-
+        $instance.removeClass('inCart-template'); //make entry visible
+        $container.append($instance);
+    })
+    $container.fadeIn();
     //TODO: code to render sub-total price of the cart
     //the tax amount (see instructions), 
     //and the grand total
 
 } //renderCart()
+
+
+
 
 // postCart()
 // posts the cart model to the server using
