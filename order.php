@@ -106,6 +106,6 @@
 	</div>
 </main>        
 
-<script src="js/pizzeria-order.js"></script>
+<script src="js/pizzeriaorder.js"></script>
 
 <?php include("footer.html"); ?>
