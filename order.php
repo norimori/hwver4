@@ -1,7 +1,7 @@
 <?php include("header.html"); ?>
 <main>
 	<div id="content-text">
-		<h1 class="title">Menu</h1>
+		<h1 class="title">Order Online</h1>
 		<h2>- Order Online -</h2>
 		<div class="menu-cat">
 			<p class="inline">
@@ -11,46 +11,70 @@
 				Delivery times: Noon - 11:00PM
 			</p>
 			<p class="inline">
+				Delivery is free! But orders must be a minimum of $20.
+			</p>
+			<p class="inline">
 				We accept cash or credit cards on delivery.
 			</p>
-			<h3 class="highlights">Pizzas</h3>
-			<p class="inline">All our pizzas are made with hand-thrown thin crust, baked in real wood ovens. Choose from one of these sizes:</p>
-			<ul class="cost" id="size">
-				<li>Small (12")</li>
-				<li>Medium (14")</li>
-				<li>Large (17")</li>
-			</ul>
-			<p id="customize">All pizzas can be customized--add a few ingredients, or take a few off--for an extra $2.</p>
+			<p class="inline">
+				We don't deliver our custom pizzas, so if you want to try one out, come eat in!	
+			</p>
 		</div>
+
+
 		<div class="row">
-			<div class="col-md-6">
-				<h4>Meat Pies</h4>
+			<div class="col-md-6"> <!-- Menu Display-->
+				<h3 class="highlights">Meat Pizzas</h3>
 				<dl class="meat">
 					<!--Meat Pizzas populate here-->
 				</dl>
-			</div>
-			<div class="col-md-6">
-				<h4>Vegetarian Pies</h4>
+
+				<h3 class="highlights">Vegetarian Pizzas</h3>
 				<dl class="vegetarian">
 					<!--Vegetarian pizzas populate here-->
 				</dl>
-			</div>
+
+				<hr>
+
+				<h3 class="highlights">Drinks</h3>
+				<ul class="drinks">
+					<!--Drink items populate here-->
+				</ul>
+
+				<hr>
+				
+				<h3 class="highlights">Dessert</h3>
+				<ul class="desserts">
+					<!--Desert items populate here-->
+				</ul>
+			</div> <!-- Menu Display -->
+
+			<div class="col-md-6"> <!-- Cart Display -->
+                <h3>Your Cart</h3>
+                <ul class="order-list">
+
+                </ul>
+			</div> <!-- Cart Display -->
 		</div>
-		<hr>
-		<div class="center-text">
-			<h3 class="highlights">Drinks</h3>
-			<ul class="drinks">
-				<!--Drink items populate here-->
-			</ul>
-			<hr>
-			<h3 class="highlights">Dessert</h3>
-			<ul class="desserts">
-				<!--Desert items populate here-->
-			</ul>
-		</div>
+
+
 	</div>
 </main>
 
+<script src="lib/jquery-2.0.3/jquery-2.0.3.min.js"></script>
+
+<!-- Online ordering script -->
+<script src="js/utils.js"></script>
+<script src="js/events.js"></script>
+<script src="js/models.js"></script>
+<script src="js/views.js"></script>
+<script src="js/movies.js"></script>
+<script src="js/movieView.js"></script>
+<script src="js/moviesView.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/cartItemView.js"></script>
+<script src="js/cartView.js"></script>
+<script src="js/controller.js"></script>
 
 
 <?php include("footer.html"); ?>

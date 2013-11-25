@@ -35,16 +35,25 @@ $(function() {
 		pizzaDescription.html(pizza.description);
 		place.append(pizzaDescription);
 
-		//Get prices of pizza
-		var prices = "$" + pizza.prices[0];
+		//Make buttons according to available pizza size options
+		var orderSize;
 		var j; //iterator
-		for (j = 1; j < pizza.prices.length; j++) {
-			prices = prices + "/$" + pizza.prices[j];
+		for (j = 0; j < pizza.prices.length; j++) {
+			orderSize = $(document.createElement('button'));
+			orderSize.addClass('add-to-cart');
+
+			orderSize.attr('data-type', 'type'); //pizza, drink, or desert
+			orderSize.attr('data-name', 'name'); //name of item
+			if (j == 0) {
+				orderSize.attr('data-size', 'small'); 
+			} else if (j == 1) {
+				orderSize.attr('data-size', 'medium');
+			} else {
+				orderSize.attr('data-size', 'large');
+			}
+			orderSize.attr('data-price', pizza.prices[j]);
+			place.append(orderSize);
 		}
-		pizzaCost = $(document.createElement('dd'));
-		pizzaCost.html(prices);
-		pizzaCost.addClass('cost');
-		place.append(pizzaCost);
 	}
 
 	//Populate menu with drinks and desserts
