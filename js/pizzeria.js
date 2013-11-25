@@ -161,11 +161,11 @@ $(function() {
 		}
 
 		if (hasName && hasAddr1 && hasZipcode && hasPhone && hasPrice) {
-            console.log($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
+            alert($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
 	        //postCart(cart, $('.cart-form'));
 		}
 
-	}); //Submit form submit
+	});
 }); //Document on ready
 
 

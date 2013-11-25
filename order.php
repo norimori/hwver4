@@ -59,7 +59,7 @@
                
 
                 <h3>Delivery Info</h3>
-                <form class="form-horizontal order-form" role="form">
+                <form class="form-horizontal" role="form">
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="first-name">Name:</label>
 	                    <div class="col-lg-5">
@@ -82,7 +82,7 @@
 	                </div>
 	                <div class="row">
 	                    <div class="col-lg-12 text-right">
-	                        <button type="submit" class="btn btn-primary">Submit Order</button>
+	                        <button type="submit" class="btn btn-primary order-form">Place Order</button>
 	                    </div>
 	                </div>
                </form>
