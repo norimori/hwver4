@@ -164,7 +164,7 @@ $(function() {
 			return false;
 		}
 
-	    /*postCart(cart, $('.cart-form'));*/
+	    postCart(cart, $('.cart-form'));
 
 	});
 }); //Document on ready
@@ -245,9 +245,12 @@ function postCart(cart, cartForm) {
     //and set it's value to a JSON representation of the cart model
     alert($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
 
+    
+    /*
     $('submit-order').find('input[name="cart"]').val(JSON.stringify(cart));
     //submit the form--this will navigate to an order confirmation page
     cartForm.submit();
+    */
 } //postCart()
 
 
