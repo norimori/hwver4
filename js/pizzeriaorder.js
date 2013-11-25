@@ -160,11 +160,11 @@ $(function() {
     	console.log('saving to local storage');
 	});
 
-	var add1JSON = localStorage.getItem('address1');
+	var prevAdd1 = localStorage.getItem('address1');
 	var insertAdd1;
-	if (add1JSON && add1JSON.length > 0) {
+	if (prevAdd1 && prevAdd1.length > 0) {
 		insertAdd1 = $('.input-form').find('input[name="addr-1"]')
-    	insertAdd1.html(JSON.parse(add1JSON));
+    	insertAdd1.html(prevAdd1);
     	console.log('retrieved!');
 	}
 
