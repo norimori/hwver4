@@ -54,7 +54,7 @@
 
 			<div class="col-md-6"> <!-- Cart and Customer Display -->
                 <h3>Your Cart</h3>
-                <button type="button" class="btn btn-default clear-cart">Clear Cart</button>
+                <button type="button" class="btn clear-cart">Clear Cart</button>
                 <div class="cart-display"></div>
                
 

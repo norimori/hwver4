@@ -105,6 +105,7 @@ $(function() {
 
     //Clear cart contents
     $('.clear-cart').click(function(){
+    	alert("Emptying cart...");
     	cart.items = [];
     });
 
