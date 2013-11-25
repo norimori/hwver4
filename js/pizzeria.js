@@ -148,19 +148,17 @@ function renderCart(cart, container) {
     subTotal.html("SubTotal: " + subTotalPrice);
    $container.append(subTotal);
     tax = $(document.createElement('p'));
-    tax.html(subTotalPrice * 9.5);
+    tax.html("Tax: " + subTotalPrice * 0.095);
     $container.append(tax);
     grandTotal = $(document.createElement('p'));
-    grandTotal.html(subTotal + tax);
+    grandTotal.html("Total: " + subTotal + tax);
     grandTotal = tax + subTotalPrice;
     $container.append(grandTotal);
     
 
-    	//Remove item from cart
+    //Remove item from cart
 	//Finds index of item to remove from cart's items array and removes it.
 	$('.remove-from-cart').click(function(){	
-		alert('Removing...');
-
 	    var idxToRemove = this.getAttribute('data-index');
 	    cart.items.splice(idxToRemove, 1);
 
@@ -169,9 +167,6 @@ function renderCart(cart, container) {
 
         renderCart(cart, $('.cart-display'));
 	});
-
-
-
 
     $container.fadeIn();
     //TODO: code to render sub-total price of the cart
