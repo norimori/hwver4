@@ -51,9 +51,7 @@
 
 			<div class="col-md-6"> <!-- Cart Display -->
                 <h3>Your Cart</h3>
-                <ul class="order-list">
-
-                </ul>
+                <div class="cart-display"></div>
 			</div> <!-- Cart Display -->
 		</div>
 

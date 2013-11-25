@@ -40,6 +40,7 @@ $(function() {
 		var j; //iterator
 		for (j = 0; j < pizza.prices.length; j++) {
 			pizzaButton = $(document.createElement('button'));
+			itemButton.attr('type', 'button');
 			pizzaButton.addClass('add-to-cart');
 
 			pizzaButton.attr('data-type', pizza.type);
@@ -60,7 +61,116 @@ $(function() {
 	//Populate menu with drinks and desserts
 	otherMenus("drinks");
 	otherMenus("desserts");
+
+
+	//Cart object. Stores customer information and all items added to cart.
+	var cart = {
+	    name: null,
+	    address1: null,
+	    zip: null,
+	    phone: null,
+	    items: [] //stores all items
+	}; //Cart object
+
+
+	//Adding item to cart
+	//Constructs new single-in-cart item object, to be added to cart object.
+	$('.add-to-cart').click(function(){
+	    var newCartItem = {
+	        type: this.getAttribute('data-type'),
+	        name: this.getAttribute('data-name'),
+	        size: this.getAttribute('data-size'),
+	        price: this.getAttribute('data-price')
+	    };
+
+        cart.items.push(newCartItem); //add item to cart
+        console.log("you just added" . newCartItem.name);
+
+        //render the cart's contents to the element
+        //we're using to contain the cart information
+        //note that you would need a <div> or some
+        //other grouping element on the page that has a
+        //style class of 'cart-container'
+        renderCart(cart, $('.cart-display'));
+	});
+
+
+	//Submitting entire order to server
+    $('.place-order').click(function(){
+        
+        //TODO: validate the cart to make sure all the required
+        //properties have been filled out, and that the 
+        //total order is greater than $20 (see homework 
+        //instructions) 
+
+        postCart(cart, $('.cart-form'));
+    });
+
+
 }); //Document on ready
+
+
+
+// renderCart()
+// renders the current cart information to the screen
+// parameters are:
+//  - cart (object) reference to the cart model
+//  - container (jQuery object) reference to the container <div>
+//
+function renderCart(cart, container) {
+    var idx, item;
+    
+    //empty the container of whatever is there currently
+    container.empty();
+
+    //for each item in the cart...
+    for (idx = 0; idx < cart.items.length; ++idx) {
+        item = cart.items[idx];
+
+        //TODO: code to render the cart item
+
+    } //for each cart item
+
+    //TODO: code to render sub-total price of the cart
+    //the tax amount (see instructions), 
+    //and the grand total
+
+} //renderCart()
+
+// postCart()
+// posts the cart model to the server using
+// the supplied HTML form
+// parameters are:
+//  - cart (object) reference to the cart model
+//  - cartForm (jQuery object) reference to the HTML form
+//
+function postCart(cart, cartForm) {
+    //find the input in the form that has the name of 'cart'    
+    //and set it's value to a JSON representation of the cart model
+    cartForm.find('input[name="cart"]').val(JSON.stringify(cart));
+
+    //submit the form--this will navigate to an order confirmation page
+    cartForm.submit();
+
+} //postCart()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Populate menus according to passed menu type.
 //@param - menuType to populate
@@ -76,6 +186,7 @@ function otherMenus(menuType) {
 	 	itemName = $(document.createElement('li'));
 	 	itemName.html(item.name);
 	 	itemButton = $(document.createElement('button'));
+	 	itemButton.attr('type', 'button');
 	 	itemButton.attr('data-type', item.type); //drink or dessert
 	 	itemButton.attr('data-name', item.name); //name of item
 	 	itemButton.attr('data-price', item.price); //price of item
@@ -84,3 +195,4 @@ function otherMenus(menuType) {
 	 	$('.' + menuType).append(itemButton);
 	}
 };
+
