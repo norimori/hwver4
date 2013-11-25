@@ -1,6 +1,9 @@
 //Dynamically add menu items to Dawg Pizza Menu.
 
 //Document on ready
+
+var grandTotalPrice = 0;
+
 $(function() {
 	//auto-play carousel
     $('.carousel').carousel();
@@ -63,12 +66,6 @@ $(function() {
 	otherMenus("desserts");
 
 
-
-
-
-
-
-
 	//Cart object. Stores customer information and all items added to cart.
 	var cart = {
 	    name: null,
@@ -105,6 +102,63 @@ $(function() {
 
         postCart(cart, $('.cart-form'));
     });
+
+    //Clear cart contents
+    $('.clear-cart').click(function(){
+    	cart.items = [];
+    });
+
+
+	//Signup form is submitted. Listens to <button type="submit".
+	$('.order-form').submit(function() {
+		var signupForm = $(this); //wrap raw DOM <form> into JQ object to use JQ methods on it
+
+		//(For Safari, IE9) Checks if "required" fields have a value. 
+		var reqField;
+		var reqValue;
+		reqField = signupForm.find('input[name="first-name"]'); //Grab <input name="first-name">
+		reqValue = reqField.val().trim(); //Grab its innerHTML
+		if(0 === reqValue.length) {
+			alert('Please enter a first name.');
+			return false;
+		}
+
+		reqField = signupForm.find('input[name="last-name"]');
+		reqValue = reqField.val().trim();
+		if(0 === reqValue.length) {
+			alert('Please enter a last name.');
+			return false;
+		}
+
+		//If addr-1 has a value, zip must too
+		var addr1Input = signupForm.find('input[name="addr-1"]'); //Select descendent <input name="addr-1"
+		var addr1Value = addr1Input.val().trim(); //Gets current inner HTML of addrInput
+		if (addr1Value && addr1Value.length > 0) { //If addrValue is not undefined and has content
+			var zipInput = signupForm.find('input[name="zip"]');
+			var zipValue = zipInput.val().trim();
+			if (zipValue && zipValue.length > 0) {
+				return true;
+			} else {
+				alert('Please enter a zip code.');
+				return false;
+			}
+		}
+
+		reqField = signupForm.find('input[name="phone"]');
+		reqValue = reqField.val().trim();
+		if(0 === reqValue.length) {
+			alert('Please enter a phone number.');
+			return false;
+		}
+
+		if(grandTotalPrice < 20 {
+			alert("Online orders must be at least $20.00");
+			return false;
+		}
+
+	}); //Submit form submit
+
+
 }); //Document on ready
 
 
@@ -144,14 +198,16 @@ function renderCart(cart, container) {
         subTotalPrice = Number(subTotalPrice) + Number(this.price);
     })
 
+    //Calculate subtotal, tax, and grand total
     subTotal = $(document.createElement('p'));
     subTotal.html("SubTotal: " + Number(subTotalPrice).toFixed(2));
    $container.append(subTotal);
-    tax = $(document.createElement('p'));
+    var tax = $(document.createElement('p'));
     tax.html("Tax: " + Number(subTotalPrice * 0.095).toFixed(2));
     $container.append(tax);
     grandTotal = $(document.createElement('p'));
-    grandTotal.html("Total: " + (Number(subTotalPrice) + Number(subTotalPrice * 0.095)).toFixed(2));
+    grandTotalPrice = (Number(subTotalPrice) + Number(subTotalPrice * 0.095)).toFixed(2);
+    grandTotal.html("Total: " + grandTotalPrice);
     $container.append(grandTotal);
     
 
@@ -160,18 +216,10 @@ function renderCart(cart, container) {
 	$('.remove-from-cart').click(function(){	
 	    var idxToRemove = this.getAttribute('data-index');
 	    cart.items.splice(idxToRemove, 1);
-
-	    console.log("You have removed:" + this.name);
-	    console.log("Current cart is now: " + cart.items);
-
         renderCart(cart, $('.cart-display'));
 	});
 
     $container.fadeIn();
-    //TODO: code to render sub-total price of the cart
-    //the tax amount (see instructions), 
-    //and the grand total
-
 } //renderCart()
 
 

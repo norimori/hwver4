@@ -52,15 +52,52 @@
 
 
 
-			<div class="col-md-6"> <!-- Cart Display -->
+			<div class="col-md-6"> <!-- Cart and Customer Display -->
                 <h3>Your Cart</h3>
+                <button type="button" class="btn btn-default clear-cart">Clear Cart</button>
                 <div class="cart-display"></div>
-			</div> <!-- Cart Display -->
+               
 
-			<div class="inCart-template">
+                <h3>Delivery Info</h3>
+                <form method="POST" action="http://dawgpizza.com/orders/" class="form-horizontal order-form" role="form">
+	                <div class="form-group">
+	                    <label class="col-lg-2 control-label" for="first-name">Name:</label>
+	                    <div class="col-lg-5">
+	                        <input type="text" class="form-control" name="first-name" id="first-name" placeholder="first name" required>
+	                    </div>
+	                    <div class="col-lg-5">
+	                        <input type="text" class="form-control" name="last-name" id="last-name" placeholder="last name" required>
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-lg-2 control-label" for="addr-1">Address:</label>
+	                    <div class="col-lg-10">
+	                        <input type="text" class="form-control" name="addr-1" id="addr-1" placeholder="street address">
+	                        <input type="text" class="form-control" name="addr-2">
+	                        <input type="text" class="form-control" name="addr-3">
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-lg-2 control-label" for="phone">Phone:</label>
+	                    <div class="col-lg-10">
+	                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="primary phone number">
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="col-lg-12 text-right">
+	                        <button type="submit" class="btn btn-primary">Submit Order</button>
+	                    </div>
+	                </div>
+               </form>
+			</div> <!-- Cart and Customer Display -->
+
+
+
+			<div class="inCart-template"><!-- Cart item template. Hidden until items added -->
 				<p class="inCart-name inline"></p>
 				<p class="inCart-price inline"><p>
 			</div>
+
 		</div>
 
 
