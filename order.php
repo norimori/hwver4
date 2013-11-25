@@ -126,7 +126,7 @@
             			<button class="remove-from-cart btn btn-danger btn-xs">X</button>
             		</div>
             		<div class="col-xs-7 inCart-name inline"></div>
-            		<div class="col-xs-4">
+            		<div class="col-xs-3">
 						$<span class="inCart-price"></span>
 					</div>
             	</div>				
