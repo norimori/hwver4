@@ -50,8 +50,6 @@
 			</div> <!-- Menu Display -->
 
 
-
-
 			<div class="col-md-6"> <!-- Cart and Customer Display -->
                 <h3 class="inline yourStuff">Your Cart</h3>
                 <button type="button" class="btn btn-danger inline clear-cart">Clear Cart</button>
@@ -60,27 +58,25 @@
                 	<div class="row">
                 		<div class="col-xs-8">SubTotal:</div>
                 		<div class="col-xs-4">
-							$<span class="subTotal-price"></span>
+							$<span class="subTotal-price">0.00</span>
 						</div>
                 	</div>
 
                 	<div class="row">
                 		<div class="col-xs-8">Tax:</div>
                 		<div class="col-xs-4">
-							$<span class="tax-price"></span>
+							$<span class="tax-price">0.00</span>
 						</div>
                 	</div>
 
                 	<div class="row">
                 		<div class="col-xs-8">Total:</div>
                 		<div class="col-xs-4">
-							$<span class="grandTotal-price"></span>
+							$<span class="grandTotal-price">0.00</span>
 						</div>
                 	</div>                	                	
                 </div>
                
-                <hr>
-
                 <h3 class="yourstuff">Delivery Info</h3>
                 <form class="form-horizontal input-form" role="form">
 	                <div class="form-group">
