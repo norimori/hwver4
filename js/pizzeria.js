@@ -92,10 +92,12 @@ $(function() {
 
 	//Remove item from cart
 	//Finds index of item to remove from cart's items array and removes it.
-	$('.remove-from-cart').click(function(){	
+	$('.yay').click(function(){	
 		console.log("Removing...");
+
 	    var idxToRemove = this.getAttribute('data-index');
 	    cart.items.splice(idxToRemove, 1);
+
 	    console.log("You have removed:" + this.name);
 	    console.log("Current cart is now: " + cart.items);
 
@@ -139,7 +141,7 @@ function renderCart(cart, container) {
         $instance.removeClass('inCart-template'); //make entry visible
 
         removeButton = $(document.createElement('button'));
-        removeButton.addClass('remove-from-cart');
+        removeButton.addClass('yay');
         removeButton.attr('type', 'button');
         removeButton.attr('data-index', index);
         removeButton.html(' X ');
