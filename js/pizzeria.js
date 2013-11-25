@@ -110,17 +110,23 @@ $(function() {
 
 		var nameInput = signupForm.find('input[name="name"]');
 		var nameValue = nameInput.val();
+		console.log(nameValue);
 		var addr1Input = signupForm.find('input[name="addr-1"]');
 		var addr1Value = addr1Input.val();
+		console.log(addr1Value);
 		var addr2Input = signupForm.find('input[name="addr-2"]');
 		var addr2Value = addr2Input.val();
+		console.log(addr2Value);
 		var phoneInput = signupForm.find('input[name="phone"]');
 		var phoneValue = phoneInput.val();
+		console.log(phoneValue);
 		var zipInput = signupForm.find('input[name="zip"]');
 		var zipValue = zipInput.val();
+		console.log(zipValue);
 
 		cart.name = nameValue;
 		cart.address1 = addr1Value;
+		cart.address2 = addr2Value;
 		cart.phone = phoneValue;
 		cart.zip = zipValue;
 
