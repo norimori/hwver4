@@ -85,7 +85,7 @@
 
                 <hr>
                
-                <h3 class="yourstuff">Delivery Info</h3>
+                <h3 class="yourStuff">Delivery Info</h3>
                 <form class="form-horizontal input-form" role="form">
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="name">Name:</label>
