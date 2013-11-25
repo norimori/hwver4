@@ -228,6 +228,7 @@ function otherMenus(menuType) {
 	var itemPrice;
 	var place; //Location to append item
 	var itemButton; //Button to click to add item to cart
+	var br;
 	for (i = 0; i < com.dawgpizza.menu[menuType].length; i++) {
 	 	item = com.dawgpizza.menu[menuType][i];
 	 	itemName = $(document.createElement('li'));
@@ -237,7 +238,6 @@ function otherMenus(menuType) {
 		itemButton.addClass('add-to-cart');
 		itemButton.addClass('btn');
 		itemButton.addClass('btn-warning');
-		itemButton.addClass('inline');
 	 	itemButton.attr('type', 'button');
 	 	itemButton.attr('data-type', item.type); //drink or dessert
 	 	itemButton.attr('data-name', item.name); //name of item
@@ -245,5 +245,8 @@ function otherMenus(menuType) {
 	 	itemButton.html("$" + item.price);
 	 	$('.' + menuType).append(itemName);
 	 	$('.' + menuType).append(itemButton);
+	 	br = $(document.createElement('br'));
+	 	$('.' + menuType).append(br);
+
 	}
 } //otherMenus()
