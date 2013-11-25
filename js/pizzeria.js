@@ -115,7 +115,7 @@ $(function() {
 	
 
 		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
-		if (reqField.value()) {
+		if (reqField.val()) {
 			reqValue = reqField.val().trim(); //Grab its innerHTML
 			cart.name = reqValue;
 			console.log(reqValue);
