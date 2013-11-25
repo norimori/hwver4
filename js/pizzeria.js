@@ -128,7 +128,8 @@ function renderCart(cart, container) {
     var $template = $('.inCart-template'); 
     var $container = $('.cart-display'); //location to put filled item
     var removeButton; //button to click to remove item
-    
+    var index = 0;
+
     $container.hide(); //hide before fadeIn
     $container.empty(); //reset contents
     
