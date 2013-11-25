@@ -76,10 +76,10 @@ function otherMenus(menuType) {
 	 	itemName = $(document.createElement('li'));
 	 	itemName.html(item.name);
 	 	itemButton = $(document.createElement('button'));
-	 	itemButton.attr('data-type', com.dawgpizza.menu[menuType].type); //drink or dessert
-	 	itemButton.attr('data-name', com.dawgpizza.menu[menuType].name); //name of item
-	 	itemButton.attr('data-price', com.dawgpizza.menu[menuType].price); //price of item
-	 	itemButton.html(com.dawgpizza.menu[menuType].price);
+	 	itemButton.attr('data-type', item.type); //drink or dessert
+	 	itemButton.attr('data-name', item.name); //name of item
+	 	itemButton.attr('data-price', item.price); //price of item
+	 	itemButton.html(item.price);
 	 	$('.' + menuType).append(itemName);
 	 	$('.' + menuType).append(itemButton);
 	}
