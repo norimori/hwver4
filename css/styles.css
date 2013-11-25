@@ -293,9 +293,15 @@ h4 {
 	display: none;
 }
 
+.inCart-price{
+	color: #BAA400;
+	text-align: right;
+}
+
 .inline {
 	display: inline;
 }
+
 
 /*Dynamically adjust content display according to screen size*/
 @media screen and (max-width: 820px) {
