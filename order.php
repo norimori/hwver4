@@ -59,14 +59,13 @@
                
 
                 <h3>Delivery Info</h3>
-                <form method="POST" action="http://dawgpizza.com/orders/" class="form-horizontal order-form" role="form">
+                <form class="form-horizontal order-form" role="form">
+                	<input class="submit-order"
+                	$('submit-order').submit();
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="first-name">Name:</label>
 	                    <div class="col-lg-5">
-	                        <input type="text" class="form-control" name="first-name" id="first-name" placeholder="first name" required>
-	                    </div>
-	                    <div class="col-lg-5">
-	                        <input type="text" class="form-control" name="last-name" id="last-name" placeholder="last name" required>
+	                        <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
 	                    </div>
 	                </div>
 	                <div class="form-group">
@@ -89,6 +88,11 @@
 	                    </div>
 	                </div>
                </form>
+
+               <!-- Submit pizza cart order -->
+               <form class="cart-form" action="http://dawgpizza.com/orders/" method="POST">
+					<input class="submit-order" type="hidden" name="cart">
+				</form>
 			</div> <!-- Cart and Customer Display -->
 
 

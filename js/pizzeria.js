@@ -95,45 +95,52 @@ $(function() {
 
     //Clear cart contents
     $('.clear-cart').click(function(){
-    	alert("Emptying cart...");
     	cart.items = [];
     	renderCart(cart, $('.cart-display'));
     });
 
 
 	//Submitting orders and checking for requirements. Listens to <button type="submit".
+	//Must have first name, last name, address line 1, zipcode, and phone number.
 	$('.order-form').submit(function() {
 		var signupForm = $(this); //wrap raw DOM <form> into JQ object to use JQ methods on it
+		var hasFirstName = false;
+		var hasAddr1 = false;
+		var hasZipcode = false;
+		var hasPhone = false;
+		var hasPrice = false;
 
 		//(For Safari, IE9) Checks if "required" fields have a value. 
 		var reqField;
 		var reqValue;
-		reqField = signupForm.find('input[name="first-name"]'); //Grab <input name="first-name">
+		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
 		reqValue = reqField.val().trim(); //Grab its innerHTML
 		if(0 === reqValue.length) {
-			alert('Please enter a first name.');
+			alert('Please enter a name.');
 			return false;
+		} else {
+			hasName = true;
+			cart.name = reqValue;
 		}
 
-		reqField = signupForm.find('input[name="last-name"]');
+		reqField = signupForm.find('input[name="addr-1"]');
 		reqValue = reqField.val().trim();
-		if(0 === reqValue.length) {
-			alert('Please enter a last name.');
+		if (0 === reqValue.length) {
+			alert('Please enter a delivery destination.');
 			return false;
+		} else {
+			hasAddr1 = true;
+			cart.address1 = reqValue;
 		}
 
-		//If addr-1 has a value, zip must too
-		var addr1Input = signupForm.find('input[name="addr-1"]'); //Select descendent <input name="addr-1"
-		var addr1Value = addr1Input.val().trim(); //Gets current inner HTML of addrInput
-		if (addr1Value && addr1Value.length > 0) { //If addrValue is not undefined and has content
-			var zipInput = signupForm.find('input[name="zip"]');
-			var zipValue = zipInput.val().trim();
-			if (zipValue && zipValue.length > 0) {
-				return true;
-			} else {
-				alert('Please enter a zip code.');
-				return false;
-			}
+		reqField = signupForm.find('input[name="zip"]');
+		reqValue = reqField.val().trim();
+		if (0 === reqValue.length) {
+			alert('Please enter a delivery destination.');
+			return false;
+		} else {
+			hasZipcode = true;
+			cart.zip = reqValue;
 		}
 
 		reqField = signupForm.find('input[name="phone"]');
@@ -141,17 +148,23 @@ $(function() {
 		if(0 === reqValue.length) {
 			alert('Please enter a phone number.');
 			return false;
+		} else {
+			hasPhone = true;
+			cart.phone = reqValue;
 		}
 
 		if(grandTotalPrice < 20) {
 			alert("Online orders must be at least $20.00");
 			return false;
+		} else {
+			hasPrice = true;
 		}
 
-        postCart(cart, $('.cart-form'));
+		if (hasFirstName && hasLastName && hasAddr1 && hasZipcode && hasPhone && hasPrice) {
+	        postCart(cart, $('.cart-form'));
+		}
+
 	}); //Submit form submit
-
-
 }); //Document on ready
 
 
