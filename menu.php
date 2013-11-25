@@ -41,5 +41,6 @@
 		</div>
 	</div>
 </main>
+<script src="js/pizzeria.js"></script>
 
 <?php include("footer.html"); ?>
