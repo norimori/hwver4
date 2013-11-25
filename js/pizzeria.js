@@ -42,8 +42,8 @@ $(function() {
 			orderSize = $(document.createElement('button'));
 			orderSize.addClass('add-to-cart');
 
-			orderSize.attr('data-type', 'type'); //pizza, drink, or desert
-			orderSize.attr('data-name', 'name'); //name of item
+			orderSize.attr('data-type', pizza.type); //pizza, drink, or desert
+			orderSize.attr('data-name', pizza.name); //name of item
 			if (j == 0) {
 				orderSize.attr('data-size', 'small'); 
 			} else if (j == 1) {
@@ -52,6 +52,7 @@ $(function() {
 				orderSize.attr('data-size', 'large');
 			}
 			orderSize.attr('data-price', pizza.prices[j]);
+			orderSize.html(pizza.prices[j]);
 			place.append(orderSize);
 		}
 	}
