@@ -120,8 +120,8 @@ $(function() {
 		}
 		*/
 
-		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
-		if (reqField.val().trim()) {
+		reqField = $(signupForm.find('input[name="name"]')); //Grab <input name="first-name">
+		if (reqField.val()) {
 			reqValue = reqField.val().trim(); //Grab its innerHTML
 			cart.name = reqValue;
 			console.log(reqValue);
