@@ -154,7 +154,7 @@ $(function() {
 
 
 
-	$(".delivery").on('change', function(){
+	$("#addr-1").on('change', function(){
     	localStorage.setItem('address1', cart.address1.toJSON());
     	console.log('saving to local storage');
 	});
