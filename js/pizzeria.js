@@ -84,7 +84,7 @@ $(function() {
 	    };
 
         cart.items.push(newCartItem); //add item to cart
-        console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size + "(" + newCartItem.price) + ")";
+        console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size + "(" + newCartItem.price) + ")");
 
         //render the cart's contents to the element
         //we're using to contain the cart information
@@ -118,7 +118,7 @@ $(function() {
 //  - container (jQuery object) reference to the container <div>
 function renderCart(cart, container) {
     var $template = $('.inCart-template'); 
-    var $cart = $('.cart-display'); //location to put filled item
+    var $container = $('.cart-display'); //location to put filled item
     
     $container.hide(); //hide before fadeIn
     $container.empty(); //reset contents
