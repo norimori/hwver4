@@ -1,0 +1,18 @@
+		<img src="img/pizza1.jpg" alt="Pizza Photo">
+		<div id="content-text-home">
+			<p>We are...<span id="name">DAWG PIZZA<span></p>
+			<p>Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!</p>
+			<div class="highlights">
+				Hours: 10:00AM - 11:00PM Monday through Saturday<br>
+				Call for Delivery: (206) 555-1212<br>
+				Address:<br>
+				<address class="indent">
+					<a href="https://maps.google.com/?q=4306 University Way NE, Seattle, WA 98105">
+					4306 University Way NE <br>
+					Seattle, WA 98105<br>
+					</a>
+				</address>
+				Email: <a href="mailto:dawgpizza@gmail.com">dawgpizza@gmail.com</a><br>
+				Follow us on Twitter: <a href="https://twitter.com/DawgPizzaSea">@DawgPizzaSea</a>
+			</div>
+		</div>

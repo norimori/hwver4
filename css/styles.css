@@ -1,0 +1,344 @@
+/*Import Google web fonts 'Yanone Kaffeezatz*/
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300);
+@import url(http://fonts.googleapis.com/css?family=Plaster);
+
+/*reset css*/
+@import url(reset.css);
+
+body {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	color: #382f2f;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+body, nav {
+	background-image: url(../img/mochaGrunge.png);
+}
+
+.container {
+	width: 90%;
+	margin: auto;
+	color: white;
+}
+
+/*
+pizzeria.js handles dynamic title changes.
+Keep this for SEO.
+*/
+.title {
+	display: none;
+}
+
+#navigate {
+	width: 19%;
+	float: left;
+	margin-right: 20px;
+	margin-top: 80px;
+}
+
+nav img {
+	width: 100%;
+}
+
+nav a {
+	font-weight: bold;
+	font-size: 250%;
+	color: #382f2f;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+	color: #ecbf0f;
+}
+
+nav a:link, nav a:visited {
+	text-decoration: none;
+ 	color: #382f2f;
+}
+
+nav li{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	box-shadow: 2px 2px 6px #555;
+	padding: 10px;
+}
+
+nav li, nav a{
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+	transition: all 0.3s ease; 
+}
+
+nav li:hover {
+	background-color: #ecbf0f;
+}
+
+nav li:focus {
+	background-image: none;
+	background-color: #ecbf0f;
+	border: solid 20px black;
+}
+
+nav ul {
+	padding-bottom: 1px;
+}
+
+#nav-top {
+	margin-top: 10px;
+}
+
+#nav-middle {
+	margin: 10px;
+}
+
+#nav-bottom {
+	margin-bottom: 10px;
+}
+
+main {
+	float: left;
+	width: 60%;
+}
+
+.we-are {
+	height: 70px;
+	max-width: 100%;
+	margin-left: 10px;
+	vertical-align: middle
+}
+
+.about-weare{
+	margin-bottom: 20px;
+	line-height: 150pt;
+}
+
+.about-weare img {
+	height: 125px;
+}
+
+#logo {
+	padding: 15px;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease; 
+}
+
+#logo:hover {
+    box-shadow: 0px 0px 10px #ecbf0f;
+}
+
+#content-text {
+	background: #2b2b2b;
+	padding: 20px;
+	line-height: 20px;
+}
+
+#name {
+	font-family: 'Plaster', cursive;
+	font-size: 450%;
+}
+
+.highlights, h2 {
+	color: #ecbf0f;
+}
+
+#twitter-widget-0 {
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+#our-story {
+	margin-bottom: 40px;
+}
+
+.eco {
+	color: #379228;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+h2 {
+	font-size: 300%;
+	margin-bottom: 20px;
+	text-align: center;
+	font-weight: bold;
+	clear: left;
+}
+
+dt {
+	font-weight: bold;
+}
+
+#quickref {
+	width: 14%;
+	float: left;
+	margin-left: 10px;
+	margin-top: 130px;
+	font-weight: bold;
+	color: #ecbf0f;
+	font-size: 150%
+}
+
+.specifics {
+	margin-bottom: 15px;
+}
+
+.specific-topic {
+	color: #382f2f;	
+	font-size: 200%;
+}
+
+address {
+	text-decoration: underline;
+}
+
+#footer {
+	margin: 0 auto;
+	width: 75%;
+}
+
+#footer p {
+	text-align: center;
+}
+
+hr {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.menu-cat {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.center-text {
+	text-align: center;
+}
+
+#customize {
+	font-weight: bold;
+	font-style: italic;
+	text-decoration: underline;
+	margin-bottom: 5px;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.cost {
+	color: #baa400;
+	margin-bottom: 20px;
+}
+
+#size {
+	width: 14%;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin: auto;
+}
+
+h3 {
+	font-size: 200%;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+h4 {
+	font-size: 150%;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#drink {
+	margin-bottom: 20px;
+}
+
+/*Hide single column navigation for regular screen size*/
+.navbar {
+	display: none;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a{
+	color: #382f2f;
+}
+
+#pizzavid-link {
+	display: none;
+}
+
+/*Dynamically adjust content display according to screen size*/
+@media screen and (max-width: 820px) {
+	#pizzavid {
+		display: none;
+	}
+
+	#pizzavid-link {
+		display: block;
+	}
+
+	#quickref {
+		margin-top: 100px;
+		font-size: 120%
+	}
+
+	.specific-topic {
+		font-size: 150%;
+	}
+
+	h2 {
+		font-size: 200%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.container {
+		width: 95%;
+	}
+
+	#navigate {
+		display: none;
+	}
+
+	.navbar {
+		display: block;
+	}
+
+	#quickref {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0px;
+		float: left;
+		font-size: 100%
+	}
+
+	.specific-topic {
+		font-size: 110%;
+	}
+
+	main {
+		width: 50%;
+		float: left;
+		margin-left: 40px;
+		margin-right: 10px
+	}
+}
+
+@media screen and (max-width: 480px) {
+	h2 {
+		font-size: 125%;
+	}
+}
