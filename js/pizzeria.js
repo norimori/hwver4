@@ -141,7 +141,7 @@ function renderCart(cart, container) {
         $container.append(removeButton);
         $container.append($instance);
         index++;
-        subTotalPrice = subTotalPrice + this.price;
+        subTotalPrice = Number(subTotalPrice) + Number(this.price);
     })
 
     subTotal = $(document.createElement('p'));
