@@ -62,8 +62,9 @@
                 <form class="form-horizontal" role="form">
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="first-name">Name:</label>
+                    </div>
 	                    <div class="col-lg-5">
-	                        <input type="text" class="form-control" name="name" id="nameform" placeholder="name" required>
+	                        <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
 	                    </div>
 	                </div>
 	                <div class="form-group">

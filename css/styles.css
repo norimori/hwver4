@@ -146,11 +146,6 @@ main {
 	line-height: 20px;
 }
 
-#name {
-	font-family: 'Plaster', cursive;
-	font-size: 450%;
-}
-
 .highlights, h2 {
 	color: #ecbf0f;
 }
