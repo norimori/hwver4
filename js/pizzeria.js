@@ -142,7 +142,7 @@ function renderCart(cart, container) {
         removeButton.attr('type', 'button');
         removeButton.attr('data-index', index);
 
-        $container.append
+        $container.append(removeButton);
         $container.append($instance);
         index++;
     })
