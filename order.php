@@ -85,7 +85,7 @@
 
                 <hr>
                
-                <h3 class="yourStuff">Delivery Info</h3>
+                <h3 class="yourStuff delivery">Delivery Info</h3>
                 <form class="form-horizontal input-form" role="form">
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="name">Name:</label>
@@ -109,7 +109,7 @@
 	                </div>
 	                <div class="row">
 	                    <div class="col-lg-12 text-right">
-	                        <button type="button" class="btn btn-success .btn-lg order-form">Place Order</button>
+	                        <button type="button" class="btn btn-success btn-lg order-form">Place Order</button>
 	                    </div>
 	                </div>
                </form>
