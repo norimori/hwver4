@@ -3,16 +3,16 @@
 	<div id="content-text">
 		<h1 class="title">Menu</h1>
 		<h2>- Order Online -</h2>
-		<p class="inline">
-			We deliver only within the Seattle city limits.
-		</p>
-		<p class="inline">
-			Delivery times: Noon - 11:00PM
-		</p>
-		<p class="inline">
-			We accept cash or credit cards on delivery.
-		</p>
 		<div class="menu-cat">
+			<p class="inline">
+				We deliver only within the Seattle city limits.
+			</p>
+			<p class="inline">
+				Delivery times: Noon - 11:00PM
+			</p>
+			<p class="inline">
+				We accept cash or credit cards on delivery.
+			</p>
 			<h3 class="highlights">Pizzas</h3>
 			<p class="inline">All our pizzas are made with hand-thrown thin crust, baked in real wood ovens. Choose from one of these sizes:</p>
 			<ul class="cost" id="size">
