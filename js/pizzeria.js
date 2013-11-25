@@ -147,7 +147,7 @@ function renderCart(cart, container) {
     subTotal = $(document.createElement('p'));
     subTotal.html("SubTotal: " + subTotalPrice);
    $container.append(subTotal);
-    tax = $(document.creatElement('p'));
+    tax = $(document.createElement('p'));
     tax.html(subTotalPrice * 9.5);
     $container.append(tax);
     grandTotal = $(document.createElement('p'));
