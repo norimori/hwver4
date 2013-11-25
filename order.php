@@ -63,7 +63,7 @@
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="first-name">Name:</label>
 	                    <div class="col-lg-5">
-	                        <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
+	                        <input type="text" class="form-control" name="name" id="nameform" placeholder="name" required>
 	                    </div>
 	                </div>
 	                <div class="form-group">
@@ -71,7 +71,7 @@
 	                    <div class="col-lg-10">
 	                        <input type="text" class="form-control" name="addr-1" id="addr-1" placeholder="street address">
 	                        <input type="text" class="form-control" name="addr-2">
-	                        <input type="text" class="form-control" name="addr-3">
+	                        <input type="text" class="form-control" name="zip" placeholder="zip code">
 	                    </div>
 	                </div>
 	                <div class="form-group">

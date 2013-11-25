@@ -113,7 +113,7 @@ $(function() {
 		//(For Safari, IE9) Checks if "required" fields have a value. 
 		var reqField;
 		var reqValue;
-		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
+		reqField = signupForm.find('input[name="nameForm"]'); //Grab <input name="first-name">
 		reqValue = reqField.val().trim(); //Grab its innerHTML
 		if(0 === reqValue.length) {
 			alert('Please enter a name.');
