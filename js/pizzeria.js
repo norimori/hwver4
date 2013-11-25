@@ -186,6 +186,7 @@ function otherMenus(menuType) {
 	 	itemName = $(document.createElement('li'));
 	 	itemName.html(item.name);
 	 	itemButton = $(document.createElement('button'));
+		itemButton.addClass('add-to-cart');
 	 	itemButton.attr('type', 'button');
 	 	itemButton.attr('data-type', item.type); //drink or dessert
 	 	itemButton.attr('data-name', item.name); //name of item
