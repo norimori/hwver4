@@ -58,7 +58,6 @@
 			</div> <!-- Cart Display -->
 
 			<div class="inCart-template">
-				<button class=".remove-from-cart" type="button"> X </button>
 				<p class="inCart-name inline"></p>
 				<p class="inCart-price inline"><p>
 			</div>

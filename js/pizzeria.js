@@ -72,7 +72,6 @@ $(function() {
 	    items: [] //stores all items
 	}; //Cart object
 
-	var itemIndex = 0; //Total index number
 
 	//Adding item to cart
 	//Constructs new single-in-cart item object, to be added to cart object.
@@ -83,7 +82,6 @@ $(function() {
 	        name: this.getAttribute('data-name'),
 	        size: this.getAttribute('data-size'),
 	        price: this.getAttribute('data-price'),
-	        index: itemIndex
 	    };
 
 	    $(this).attr('data-index', itemIndex);
@@ -91,18 +89,19 @@ $(function() {
         cart.items.push(newCartItem); //add item to cart
         console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size + "(" + newCartItem.price + ")");
 
-        //render the cart's contents to the element
-        //we're using to contain the cart information
-        //note that you would need a <div> or some
-        //other grouping element on the page that has a
-        //style class of 'cart-container'
         renderCart(cart, $('.cart-display'));
 	});
 
 
+	//Remove item from cart
+	//Finds index of item to remove from cart's items array and removes it.
 	$('.remove-from-cart').click(function(){	
 	    var idxToRemove = this.getAttribute('data-index');
 	    cart.items.splice(idxToRemove, 1);
+	    console.log("You have removed:" + this.name);
+	    console.log("Current cart is now: " + cart.items);
+
+        renderCart(cart, $('.cart-display'));
 	});
 
 
@@ -116,8 +115,6 @@ $(function() {
 
         postCart(cart, $('.cart-form'));
     });
-
-
 }); //Document on ready
 
 
@@ -130,6 +127,8 @@ $(function() {
 function renderCart(cart, container) {
     var $template = $('.inCart-template'); 
     var $container = $('.cart-display'); //location to put filled item
+    var removeButton; //button to click to remove item
+    var index = 0;
     
     $container.hide(); //hide before fadeIn
     $container.empty(); //reset contents
@@ -140,7 +139,15 @@ function renderCart(cart, container) {
         $instance.find('.inCart-price').html("$" + this.price);
 
         $instance.removeClass('inCart-template'); //make entry visible
+
+        removeButton = $(document.createElement('button'));
+        removeButton.addClass('remove-from-cart');
+        removeButton.attr('type', 'button');
+        removeButton.attr('data-index', index);
+
+        $container.append
         $container.append($instance);
+        index++;
     })
 
     $container.fadeIn();
