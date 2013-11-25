@@ -61,7 +61,7 @@
 	            </div>
                 <div class="cart-display"></div>
                 <div class="cost-display">
-                	<div class="row">
+                	<div class="row subTotal-row">
                 		<div class="col-xs-8">SubTotal:</div>
                 		<div class="col-xs-4">
 							$<span class="subTotal-price">0.00</span>

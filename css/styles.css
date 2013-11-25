@@ -309,8 +309,12 @@ h4 {
 	color: #d2b4f6;
 }
 
-.yourStuff, .clear-cart{
+.yourStuff, .clear-cart, {
 	margin-bottom: 10px;
+}
+
+.subTotal-row {
+	margin-top: 10px;
 }
 
 .no-pad-left {
