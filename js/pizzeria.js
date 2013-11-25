@@ -145,13 +145,13 @@ function renderCart(cart, container) {
     })
 
     subTotal = $(document.createElement('p'));
-    subTotal.html("SubTotal: " + subTotalPrice.toFixed(2);
+    subTotal.html("SubTotal: " + subTotalPrice.toFixed(2));
    $container.append(subTotal);
     tax = $(document.createElement('p'));
-    tax.html("Tax: " + (subTotalPrice * 0.095).toFixed(2);
+    tax.html("Tax: " + (subTotalPrice * 0.095).toFixed(2));
     $container.append(tax);
     grandTotal = $(document.createElement('p'));
-    grandTotal.html("Total: " + (subTotalPrice + subTotalPrice * 0.095).toFixed(2);
+    grandTotal.html("Total: " + (subTotalPrice + subTotalPrice * 0.095).toFixed(2));
     $container.append(grandTotal);
     
 
