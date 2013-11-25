@@ -86,7 +86,7 @@ $(function() {
 	        index: itemIndex
 	    };
 
-	    this.attr('data-index', itemIndex);
+	    $(this).attr('data-index', itemIndex);
 
         cart.items.push(newCartItem); //add item to cart
         console.log("YAY! You just added: " + newCartItem.name + " and its size is " + newCartItem.size + "(" + newCartItem.price + ")");
