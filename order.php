@@ -89,7 +89,7 @@
 
                <!-- Submit pizza cart order -->
                <form class="cart-submit" action="http://dawgpizza.com/orders/" method="POST">
-					<input class="cart-final" type="hidden" name="cart">
+					<input type="hidden" name="cart">
 				</form>
 			</div> <!-- Cart and Customer Display -->
 

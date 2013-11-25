@@ -107,42 +107,54 @@ $(function() {
 	$('.order-form').click(function() {
 		var signupForm = $('.input-form'); //wrap raw DOM <form> into JQ object to use JQ methods on it
 
-
-		var nameInput = signupForm.find('input[name="name"]');
-		var nameValue = nameInput.val();
-		console.log(nameValue);
-		var addr1Input = signupForm.find('input[name="addr-1"]');
-		var addr1Value = addr1Input.val();
-		console.log(addr1Value);
-		var addr2Input = signupForm.find('input[name="addr-2"]');
-		var addr2Value = addr2Input.val();
-		console.log(addr2Value);
-		var phoneInput = signupForm.find('input[name="phone"]');
-		var phoneValue = phoneInput.val();
-		console.log(phoneValue);
-		var zipInput = signupForm.find('input[name="zip"]');
-		var zipValue = zipInput.val();
-		console.log(zipValue);
-
-		cart.name = nameValue;
-		cart.address1 = addr1Value;
-		cart.address2 = addr2Value;
-		cart.phone = phoneValue;
-		cart.zip = zipValue;
-
-		if (addr1Value && nameValue && phoneValue && zipValue) {
-			if (grandTotalPrice > 20.00) {
-				$('.cart-final').val(JSON.stringify(cart));
-				$('.cart-submit').submit();
-			} else {
-			alert('You need to have a total of 20 dollars to continue.');
+		var reqField;
+		var reqValue;
+		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
+		reqValue = reqField.val().trim(); //Grab its innerHTML
+		if(0 === reqValue.length) {
+			alert('Please enter a first name.');
 			return false;
-			}
 		} else {
-			alert('Please fill out all of your fields');
-			return false;
-		} 
+			cart.name = reqValue;
+		}
 
+		reqField = signupForm.find('input[name="addr-1"]'); //Grab <input name="first-name">
+		reqValue = reqField.val().trim(); //Grab its innerHTML
+		if(0 === reqValue.length) {
+			alert('Please enter a delivery an address.');
+			return false;
+		} else {
+			cart.address1 = reqValue;
+		}
+
+		cart.address2 = addr2Value;
+
+		reqField = signupForm.find('input[name="phone"]'); //Grab <input name="first-name">
+		reqValue = reqField.val().trim(); //Grab its innerHTML
+		if(0 === reqValue.length) {
+			alert('Please enter a delivery an phone number.');
+			return false;
+		} else {
+			cart.phone = reqValue;
+		}
+
+		reqField = signupForm.find('input[name="zip"]'); //Grab <input name="first-name">
+		reqValue = reqField.val().trim(); //Grab its innerHTML
+		if(0 === reqValue.length) {
+			alert('Please enter a delivery an zip code.');
+			return false;
+		} else {
+			cart.zip = reqValue;
+		}
+
+		if (grandTotalPrice > 20.00) {
+			postCart(cart, $('.cart-submit'))
+			/*$('.cart-final').val(JSON.stringify(cart));
+			$('.cart-submit').submit();*/
+		} else {
+			alert('Online orders must be a minimum of $20.00.');
+			return false;
+		}
 	});
 }); //Document on ready
 
@@ -218,16 +230,10 @@ function renderCart(cart, container) {
 //  - cartForm (jQuery object) reference to the HTML form
 //
 function postCart(cart, cartForm) {
-    //find the input in the form that has the name of 'cart'    
-    //and set it's value to a JSON representation of the cart model
-    alert($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
+    cartForm.find('input[name="cart"]').val(JSON.stringify(cart));
 
-    
-    /*
-    $('submit-order').find('input[name="cart"]').val(JSON.stringify(cart));
     //submit the form--this will navigate to an order confirmation page
     cartForm.submit();
-    */
 } //postCart()
 
 
