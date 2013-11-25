@@ -236,6 +236,7 @@ function otherMenus(menuType) {
 	 	itemName.addClass('inline');
 	 	itemButton = $(document.createElement('button'));
 		itemButton.addClass('add-to-cart');
+		itemButton.addClass('sides-price');
 		itemButton.addClass('btn');
 		itemButton.addClass('btn-warning');
 	 	itemButton.attr('type', 'button');
