@@ -59,7 +59,7 @@
 
 			<div class="inCart-template">
 				<p class="inCart-name"></p>
-				<p class="inCart-price inline"><p>
+				<p class="inCart-price inline">$<p>
 			</div>
 		</div>
 
