@@ -178,17 +178,7 @@ function renderCart(cart, container) {
         $instance.find('.inCart-price').html("$" + this.price);
         $instance.removeClass('inCart-template'); //make entry visible
 
-        removeButton = $(document.createElement('button'));
-        removeButton.attr('type', 'button');
-        removeButton.attr('data-index', index);
-        removeButton.html('X');
-        removeButton.addClass('remove-from-cart');
-        removeButton.addClass('btn');
-        removeButton.addClass('btn-danger');
-        removeButton.addClass('inline');
-		removeButton.addClass('.col-xs-2');
-		removeButton.addClass('.btn-xs');
-
+        $('remove-from-cart').attr('data-index', index);
 
         $container.append(removeButton);
         $container.append($instance);
