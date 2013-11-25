@@ -23,7 +23,7 @@
 
 
 		<div class="row">
-			<div class="col-md-6"> <!-- Menu Display-->
+			<div class="col-md-6 allItems"> <!-- Menu Display-->
 				<h3 class="highlights">Meat Pizzas</h3>
 				<dl class="meat">
 					<!--Meat Pizzas populate here-->
@@ -53,7 +53,7 @@
 
 
 			<div class="col-md-6"> <!-- Cart and Customer Display -->
-                <h3 class="inline yourCart">Your Cart</h3>
+                <h3 class="inline yourStuff">Your Cart</h3>
                 <button type="button" class="btn btn-danger inline clear-cart">Clear Cart</button>
                 <div class="cart-display"></div>
                 <div class="cost-display">
@@ -79,8 +79,9 @@
                 	</div>                	                	
                 </div>
                
+                <hr>
 
-                <h3>Delivery Info</h3>
+                <h3 class="yourstuff">Delivery Info</h3>
                 <form class="form-horizontal input-form" role="form">
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="name">Name:</label>
