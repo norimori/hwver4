@@ -83,7 +83,7 @@ $(function() {
 	        name: this.getAttribute('data-name'),
 	        size: this.getAttribute('data-size'),
 	        price: this.getAttribute('data-price'),
-	        index: itemIndex;
+	        index: itemIndex
 	    };
 
 	    this.attr('data-index', itemIndex);
