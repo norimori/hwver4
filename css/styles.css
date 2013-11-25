@@ -178,6 +178,12 @@ h2 {
 dt {
 	font-weight: bold;
 	margin-top: 15px;
+	font-size: 125%;
+}
+
+li {
+	font-size: 125%;
+	font-weight: bold;
 }
 
 .veg-pizza {
