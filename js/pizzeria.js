@@ -104,7 +104,7 @@ $(function() {
 	//Must have first name, last name, address line 1, zipcode, and phone number.
 	$('.order-form').submit(function() {
 		var signupForm = $(this); //wrap raw DOM <form> into JQ object to use JQ methods on it
-		var hasFirstName = false;
+		var hasName = false;
 		var hasAddr1 = false;
 		var hasZipcode = false;
 		var hasPhone = false;
@@ -113,7 +113,7 @@ $(function() {
 		//(For Safari, IE9) Checks if "required" fields have a value. 
 		var reqField;
 		var reqValue;
-		reqField = signupForm.find('input[name="nameForm"]'); //Grab <input name="first-name">
+		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
 		reqValue = reqField.val().trim(); //Grab its innerHTML
 		if(0 === reqValue.length) {
 			alert('Please enter a name.');
@@ -160,7 +160,7 @@ $(function() {
 			hasPrice = true;
 		}
 
-		if (hasName && hasLastName && hasAddr1 && hasZipcode && hasPhone && hasPrice) {
+		if (hasName && hasAddr1 && hasZipcode && hasPhone && hasPrice) {
 	        postCart(cart, $('.cart-form'));
 		}
 
@@ -243,6 +243,7 @@ function postCart(cart, cartForm) {
     //and set it's value to a JSON representation of the cart model
     $('submit-order').find('input[name="cart"]').val(JSON.stringify(cart));
 
+    console.log($('submit-order').find('input[name="cart"]').val(JSON.stringify(cart)));
     //submit the form--this will navigate to an order confirmation page
     cartForm.submit();
 
