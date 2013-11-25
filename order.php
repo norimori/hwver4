@@ -60,8 +60,6 @@
 
                 <h3>Delivery Info</h3>
                 <form class="form-horizontal order-form" role="form">
-                	<input class="submit-order"
-                	$('submit-order').submit();
 	                <div class="form-group">
 	                    <label class="col-lg-2 control-label" for="first-name">Name:</label>
 	                    <div class="col-lg-5">
