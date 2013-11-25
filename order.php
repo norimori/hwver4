@@ -82,6 +82,8 @@
 						</div>
                 	</div>                	                	
                 </div>
+
+                <hr>
                
                 <h3 class="yourstuff">Delivery Info</h3>
                 <form class="form-horizontal input-form" role="form">
@@ -107,7 +109,7 @@
 	                </div>
 	                <div class="row">
 	                    <div class="col-lg-12 text-right">
-	                        <button type="button" class="btn btn-success order-form">Place Order</button>
+	                        <button type="button" class="btn btn-success .btn-lg order-form">Place Order</button>
 	                    </div>
 	                </div>
                </form>
