@@ -93,6 +93,7 @@ $(function() {
 	//Remove item from cart
 	//Finds index of item to remove from cart's items array and removes it.
 	$('.remove-from-cart').click(function(){	
+		console.log("Removing...");
 	    var idxToRemove = this.getAttribute('data-index');
 	    cart.items.splice(idxToRemove, 1);
 	    console.log("You have removed:" + this.name);
