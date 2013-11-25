@@ -160,7 +160,7 @@ $(function() {
 			hasPrice = true;
 		}
 
-		if (hasFirstName && hasLastName && hasAddr1 && hasZipcode && hasPhone && hasPrice) {
+		if (hasName && hasLastName && hasAddr1 && hasZipcode && hasPhone && hasPrice) {
 	        postCart(cart, $('.cart-form'));
 		}
 
