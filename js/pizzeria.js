@@ -141,6 +141,7 @@ function renderCart(cart, container) {
         removeButton.addClass('remove-from-cart');
         removeButton.attr('type', 'button');
         removeButton.attr('data-index', index);
+        removeButton.html(' X ');
 
         $container.append(removeButton);
         $container.append($instance);
