@@ -4,19 +4,19 @@
 		<h1 class="title">Order Online</h1>
 		<h2>- Order Online -</h2>
 		<div class="menu-cat">
-			<p class="inline">
+			<p>
 				We deliver only within the Seattle city limits.
 			</p>
-			<p class="inline">
+			<p>
 				Delivery times: Noon - 11:00PM
 			</p>
-			<p class="inline">
+			<p>
 				Delivery is free! But orders must be a minimum of $20.
 			</p>
-			<p class="inline">
+			<p>
 				We accept cash or credit cards on delivery.
 			</p>
-			<p class="inline">
+			<p>
 				We don't deliver our custom pizzas, so if you want to try one out, come eat in!	
 			</p>
 		</div>
