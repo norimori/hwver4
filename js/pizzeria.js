@@ -111,11 +111,17 @@ $(function() {
 		var reqField;
 		var reqValue;
 
-
-	
+		/*
+		reqField = signupForm.find('input[name="first-name"]'); //Grab <input name="first-name">
+		reqValue = reqField.val().trim(); //Grab its innerHTML
+		if(0 === reqValue.length) {
+			alert('Please enter a first name.');
+			return false;
+		}
+		*/
 
 		reqField = signupForm.find('input[name="name"]'); //Grab <input name="first-name">
-		if (reqField.val()) {
+		if (reqField.val().trim()) {
 			reqValue = reqField.val().trim(); //Grab its innerHTML
 			cart.name = reqValue;
 			console.log(reqValue);
