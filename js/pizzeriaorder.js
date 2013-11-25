@@ -153,20 +153,44 @@ $(function() {
 	});
 
 
+	//Retrieve customer's previous address from local storage.
 	var currAdd1;
 	$("#addr-1").on('change', function(){
 		currAdd1 = $("#addr-1").val();
     	localStorage.setItem('address1', currAdd1);
-    	console.log('saving to local storage');
 	});
-
 	var prevAdd1 = localStorage.getItem('address1');
 	var insertAdd1;
 	if (prevAdd1 && prevAdd1.length > 0) {
 		insertAdd1 = $('.input-form').find('input[name="addr-1"]')
     	insertAdd1.val(prevAdd1);
-    	console.log('retrieved!' + prevAdd1);
 	}
+
+	var currAdd2;
+	$("#addr-2").on('change', function(){
+		currAdd1 = $("#addr-2").val();
+    	localStorage.setItem('address2', currAdd2);
+	});
+	var prevAdd2 = localStorage.getItem('address2');
+	var insertAdd2;
+	if (prevAdd2 && prevAdd2.length > 0) {
+		insertAdd2 = $('.input-form').find('input[name="addr-2"]')
+    	insertAdd2.val(prevAdd2);
+	}
+
+	var currZip;
+	$("#zip").on('change', function(){
+		currZip = $("#zip").val();
+    	localStorage.setItem('zip', zip);
+	});
+	var prevZip = localStorage.getItem('zip');
+	var insertZip;
+	if (prevZip && prevZip.length > 0) {
+		insertZip = $('.input-form').find('input[name="zip"]')
+    	insertZip.val(prevZip);
+	}
+
+
 
 
 }); //Document on ready
