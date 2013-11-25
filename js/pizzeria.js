@@ -110,7 +110,7 @@ $(function() {
 
 		var nameInput = signupForm.find('input[name="name"]');
 		var nameValue = nameInput.val();
-		console.log(nameInput);
+		console.log(nameValue);
 		var addr1Input = signupForm.find('input[name="addr-1"]');
 		var addr1Value = addr1Input.val();
 		console.log(addr1Value);
