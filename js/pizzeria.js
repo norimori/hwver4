@@ -127,7 +127,12 @@ $(function() {
 			cart.address1 = reqValue;
 		}
 
-		cart.address2 = addr2Value;
+		//Address line 2 is not required
+		reqField = signupForm.find('input[name="addr-2"]'); //Grab <input name="first-name">
+		reqValue = reqField.val().trim(); //Grab its innerHTML
+		if(0 < reqValue.length) {
+			cart.address2 = reqValue;
+		}
 
 		reqField = signupForm.find('input[name="phone"]'); //Grab <input name="first-name">
 		reqValue = reqField.val().trim(); //Grab its innerHTML

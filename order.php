@@ -70,7 +70,7 @@
 	                    <label class="col-lg-2 control-label" for="addr-1">Address:</label>
 	                    <div class="col-lg-10">
 	                        <input type="text" class="form-control" name="addr-1" id="addr-1" placeholder="street address" required>
-	                        <input type="text" class="form-control" name="addr-2" required>
+	                        <input type="text" class="form-control" name="addr-2">
 	                        <input type="text" class="form-control" name="zip" placeholder="zip code" required>
 	                    </div>
 	                </div>
