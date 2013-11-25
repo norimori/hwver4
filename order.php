@@ -117,6 +117,12 @@
 			<div class="inCart-template"><!-- Cart item template. Hidden until items added -->
 				<p class="inCart-name inline"></p>
 				<p class="inCart-price inline"><p>
+            	<div class="row">
+            		<div class="col-xs-8 inCart-name inline"></div>
+            		<div class="col-xs-4">
+						$<span class="inCart-price"></span>
+					</div>
+            	</div>				
 			</div>
 
 		</div>
