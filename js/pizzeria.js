@@ -63,6 +63,12 @@ $(function() {
 	otherMenus("desserts");
 
 
+
+
+
+
+
+
 	//Cart object. Stores customer information and all items added to cart.
 	var cart = {
 	    name: null,
@@ -88,22 +94,6 @@ $(function() {
 
         renderCart(cart, $('.cart-display'));
 	});
-
-
-	//Remove item from cart
-	//Finds index of item to remove from cart's items array and removes it.
-	$('.remove-from-cart').click(function(){	
-		alert('Removing...');
-
-	    var idxToRemove = this.getAttribute('data-index');
-	    cart.items.splice(idxToRemove, 1);
-
-	    console.log("You have removed:" + this.name);
-	    console.log("Current cart is now: " + cart.items);
-
-        renderCart(cart, $('.cart-display'));
-	});
-
 
 	//Submitting entire order to server
     $('.place-order').click(function(){
@@ -134,6 +124,7 @@ function renderCart(cart, container) {
     $container.hide(); //hide before fadeIn
     $container.empty(); //reset contents
     
+    //For each item currently in the cart
     $.each(cart.items, function() {
         $instance = $template.clone(); //creates template to fill
         $instance.find('.inCart-name').html(this.name); //this = element in array currently iterating over
@@ -163,6 +154,24 @@ function renderCart(cart, container) {
     grandTotal.html(subTotal + tax);
     grandTotal = tax + subTotalPrice;
     $container.append(grandTotal);
+    
+
+    	//Remove item from cart
+	//Finds index of item to remove from cart's items array and removes it.
+	$('.remove-from-cart').click(function(){	
+		alert('Removing...');
+
+	    var idxToRemove = this.getAttribute('data-index');
+	    cart.items.splice(idxToRemove, 1);
+
+	    console.log("You have removed:" + this.name);
+	    console.log("Current cart is now: " + cart.items);
+
+        renderCart(cart, $('.cart-display'));
+	});
+
+
+
     
     $container.fadeIn();
     //TODO: code to render sub-total price of the cart
