@@ -92,25 +92,16 @@ $(function() {
         renderCart(cart, $('.cart-display'));
 	});
 
-	//Submitting entire order to server
-    $('.place-order').click(function(){
-        
-        //TODO: validate the cart to make sure all the required
-        //properties have been filled out, and that the 
-        //total order is greater than $20 (see homework 
-        //instructions) 
-
-        postCart(cart, $('.cart-form'));
-    });
 
     //Clear cart contents
     $('.clear-cart').click(function(){
     	alert("Emptying cart...");
     	cart.items = [];
+    	renderCart(cart, $('.cart-display'));
     });
 
 
-	//Signup form is submitted. Listens to <button type="submit".
+	//Submitting orders and checking for requirements. Listens to <button type="submit".
 	$('.order-form').submit(function() {
 		var signupForm = $(this); //wrap raw DOM <form> into JQ object to use JQ methods on it
 
@@ -157,6 +148,7 @@ $(function() {
 			return false;
 		}
 
+        postCart(cart, $('.cart-form'));
 	}); //Submit form submit
 
 
