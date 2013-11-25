@@ -73,7 +73,6 @@ $(function() {
 	    address2: null,
 	    zip: null,
 	    phone: null,
-	    nextUrl: "www.google.com",
 	    items: [] //stores all items
 	}; //Cart object
 
