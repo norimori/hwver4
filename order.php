@@ -54,14 +54,14 @@
 
 			<div class="col-md-6"> <!-- Cart and Customer Display -->
                 <h3>Your Cart</h3>
-                <button type="button" class="btn clear-cart input-form">Clear Cart</button>
+                <button type="button" class="btn clear-cart">Clear Cart</button>
                 <div class="cart-display"></div>
                
 
                 <h3>Delivery Info</h3>
-                <form class="form-horizontal " role="form">
+                <form class="form-horizontal input-form" role="form">
 	                <div class="form-group">
-	                    <label class="col-lg-2 control-label" for="first-name">Name:</label>
+	                    <label class="col-lg-2 control-label" for="name">Name:</label>
 	                    <div class="col-lg-5">
 	                        <input type="text" class="form-control" name="name" id="name" placeholder="name" required>
 	                    </div>
